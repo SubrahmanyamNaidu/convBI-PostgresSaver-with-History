@@ -1,0 +1,40 @@
+{
+  "history": [
+    {
+      "type": "human",
+      "content": "heights unsafe events in a area"
+    },
+    {
+      "type": "ai",
+      "content": "SELECT city, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_ei_tech\nWHERE unsafe_condition LIKE '%Fall Hazard%' OR unsafe_condition LIKE '%Pit access hazard%' OR unsafe_condition LIKE '%Position below suspended/moving load%'\nGROUP BY city\nORDER BY unsafe_event_count DESC;"
+    },
+    {
+      "type": "ai",
+      "content": "in the ei tech area, there are 1,326 unsafe events related to height hazards such as fall hazards, pit access hazards, or being positioned below suspended/moving loads."
+    },
+    {
+      "type": "human",
+      "content": "in the srs"
+    },
+    {
+      "type": "ai",
+      "content": "SELECT city, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_srs\nGROUP BY city\nORDER BY unsafe_event_count DESC;"
+    },
+    {
+      "type": "ai",
+      "content": "in the srs system, the total number of unsafe events is highest where city is unspecified (1464 events). among specified locations, bangalore 1 leads with 1428 events, followed closely by north delhi with 1422 events, and infra/trd with 936 events. other notable cities include bangalore 2 (810), south delhi (804), mumbai 1 (600), and mumbai 2 (552), with counts gradually decreasing across various other cities and offices."
+    }
+  ],
+  "question": "in the ni tct",
+  "intent": "system_query",
+  "database_ddl": "",
+  "tablename": "",
+  "rephrased_question": "",
+  "semantic_info": "",
+  "sql_query": "",
+  "query_result": "",
+  "query_error_message": "",
+  "needs_clarification": "",
+  "visualization_data": "",
+  "final_answer": ""
+}

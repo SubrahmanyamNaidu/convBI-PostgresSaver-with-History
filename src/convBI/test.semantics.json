@@ -1,0 +1,2448 @@
+{
+    "unsafe_events_ei_tech": {
+      "event_id": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 8513",
+          "max: 17669"
+        ],
+        "is_nullable": true,
+        "description": "Unique identifier for each unsafe event record, used to distinctly track and reference incidents within the safety reporting system. Values range from 8513 to 17669, ensuring each event is individually identifiable."
+      },
+      "reporter_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "mohd Faizal",
+          "Jishnu Suresh",
+          "Rajesh Mani",
+          "Ajay Krishna",
+          "Mithilesh Singh",
+          "Dhavalkumar Sathvara",
+          "Omkar Shinde",
+          "Sagar Dube",
+          "Raj Kumar",
+          "Gajarajan Jayavelu",
+          "Sonu Srivastava",
+          "Suman Santra",
+          "Shivaji Rao",
+          "Chandrasekhar Salluri",
+          "Shweta Suryawanshi",
+          "Shubham Sharma",
+          "Harsha",
+          "Madhusudhan Chodavarapu",
+          "Jagadeesh Jayakumar",
+          "Vijaya kumar"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the individual who reported the unsafe event, typically recorded as a full name. This identifies the source of the report within the safety incident tracking process."
+      },
+      "manager_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "lalith anand",
+          "GL Rakesh Erupati",
+          "Jayant Chavan",
+          "Vijaya Kumar",
+          "GL Vineet Srivastava",
+          "Srinivasan jayabalan",
+          "Ravendra Kumar",
+          "Subhash Bandgar",
+          "Parthasarathi Srinivasan",
+          "Ch.Sreedhar",
+          "Nitin Verma",
+          "John Naik",
+          "Sandeep Patil",
+          "melkio regis",
+          "Awtar Singh",
+          "Aparna",
+          "Avik Bera",
+          "Abhijeet Rothe",
+          "Magesh Kumar",
+          "Deepak Sharma"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the manager responsible for overseeing the reported unsafe event, typically a supervisor or team lead involved in the incident's context. Contains full names as recorded during event reporting."
+      },
+      "branch": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Thane & KDMC",
+          "Chhattisgarh & Nagpur",
+          "Pune 2",
+          "Andhra Pradesh",
+          "South Delhi",
+          "Gurgaon",
+          "North Delhi",
+          "JBL",
+          "RoN",
+          "Tamil Nadu",
+          "Rajasthan",
+          "Noida",
+          "Kolkata",
+          "Bangalore 2",
+          "Hyderabad 2",
+          "Mumbai 2",
+          "Mumbai 1",
+          "Cochin",
+          "ONE",
+          "Pune 1"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific branch or location associated with the unsafe event, representing various regional offices, cities, or operational sites. This helps in categorizing and analyzing incidents by geographic or organizational units within the company."
+      },
+      "reported_date": {
+        "data_type": "date",
+        "unique_values": [
+          "min: 2025-01-01",
+          "max: 2025-06-17"
+        ],
+        "is_nullable": true,
+        "description": "Date when the unsafe event was officially reported, capturing the record submission date within the system. This helps track the timeline from event occurrence to reporting for safety management and follow-up."
+      },
+      "reporter_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "20083034.0",
+          "718860.0",
+          "20125375.0",
+          "712644.0",
+          "20094197.0",
+          "20095310.0",
+          "20103068.0",
+          "20042923.0",
+          "720162.0",
+          "712241.0",
+          "20123571.0",
+          "20003161.0",
+          "5746.0",
+          "20001449.0",
+          "20083594.0",
+          "20104969.0",
+          "20131348.0",
+          "20133087.0",
+          "708834.0",
+          "20057962.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier representing the individual who reported the unsafe event, stored as a string to accommodate numeric IDs with decimal formatting. This ID links the report to a specific reporter within the safety incident tracking system."
+      },
+      "date_of_unsafe_event": {
+        "data_type": "date",
+        "unique_values": [
+          "min: 2023-05-07",
+          "max: 2025-06-17"
+        ],
+        "is_nullable": true,
+        "description": "The date when the unsafe event occurred, indicating the specific day the incident took place. This helps track and analyze safety incidents over time within the organization."
+      },
+      "time": {
+        "data_type": "character varying",
+        "unique_values": [
+          "12:00AM"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Recorded time of the unsafe event occurrence in 12-hour format with AM/PM notation. This character varying field complements the event date to specify when the incident happened."
+      },
+      "time_of_unsafe_event": {
+        "data_type": "character varying",
+        "unique_values": [
+          "10:11",
+          "16:56",
+          "19:01",
+          "18:13",
+          "17:56",
+          "19:36",
+          "13:07",
+          "14:30",
+          "18:44",
+          "23:28",
+          "12:37",
+          "16:17",
+          "19:16",
+          "19:40",
+          "14:34",
+          "12:13",
+          "15:37",
+          "14:43",
+          "09:26",
+          "12:59"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Records the specific time (in HH:MM format) when an unsafe event occurred, capturing the event's occurrence time within the reported date. This helps in analyzing the timing patterns of safety incidents in the EI tech environment."
+      },
+      "unsafe_event_type": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Near Miss",
+          "Unsafe Condition",
+          "Unsafe Act"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the category of the reported safety incident, indicating whether it was a 'Near Miss', 'Unsafe Condition', or 'Unsafe Act'. This classification helps in identifying the nature of the unsafe event for analysis and corrective action."
+      },
+      "business_details": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Factory",
+          "Repair",
+          "Service Maintenance",
+          "New installation",
+          "Modernisation"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the type of business activity involved in the unsafe event, such as Factory operations, Repair, Service Maintenance, New installation, or Modernisation. This helps categorize the context in which the incident occurred within the technical environment."
+      },
+      "site_reference": {
+        "data_type": "text",
+        "unique_values": [
+          "G-23 Vikaspuri",
+          "EWS A-9",
+          "Lamarina",
+          "Plot 219 ind 2",
+          "A R resorts",
+          "Kavita thadani",
+          "Admin Building",
+          "Uptti",
+          "D-861, New friends colony",
+          "DTULO-2",
+          "Shubh Segun",
+          "Aastha tapovan",
+          "Sarika, Sec-13, Hisar",
+          "F-8/7 model town",
+          "Hotel project bundi",
+          "City centre mall Paratwada",
+          "A-19 WHS kirti nagar",
+          "Oasis the ashiyana",
+          "Deven varad",
+          "Kalimudin"
+        ],
+        "is_nullable": true,
+        "description": "Identifies the specific site or location associated with the unsafe event, typically including building names, plot numbers, or area references. This text field helps pinpoint where the incident occurred within the broader operational or project environment."
+      },
+      "unsafe_event_location": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Landing",
+          "Office Area",
+          "Inside Car",
+          "Other",
+          "Production Plant",
+          "Pit",
+          "Car Top",
+          "Escalator",
+          "Hoistway",
+          "Warehouse / Logistic Area",
+          "Machine Room"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the physical location where the unsafe event occurred within the facility or site, such as 'Landing', 'Office Area', or 'Production Plant'. This helps categorize and analyze incident locations for safety assessments and preventive measures."
+      },
+      "product_type": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Other ESC",
+          "Old Sch product MRL",
+          "S3 series",
+          "S97 series (ESC)",
+          "Old Sch products Traction",
+          "S95 series (MW)",
+          "S5 series",
+          "S7 series",
+          "Non Sch Elev",
+          "S93 series (ESC)",
+          "Other product",
+          "Eurolift"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the category or series of the product involved in the unsafe event, such as various equipment models or product lines. This helps identify the specific type of technology related to the incident for analysis and reporting."
+      },
+      "employee_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "20002765",
+          "20155386",
+          "20005884",
+          "20057639",
+          "20002728",
+          "20073746",
+          "20072790",
+          "20076300",
+          "722998",
+          "20073304",
+          "20001451",
+          "20009465",
+          "721554",
+          "707003",
+          "714720",
+          "20083891",
+          "704087",
+          "20002782",
+          "20148637",
+          "20109036"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Unique identifier assigned to an employee involved in or related to the reported unsafe event, represented as a string of numeric characters. This ID links the employee to event records for tracking and analysis within the safety incident management system."
+      },
+      "employee_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "mohd Faizal",
+          "Jishnu Suresh",
+          "Rajesh Mani",
+          "Ajay Krishna",
+          "Mithilesh Singh",
+          "Dhavalkumar Sathvara",
+          "Omkar Shinde",
+          "Sagar Dube",
+          "Raj Kumar",
+          "Gajarajan Jayavelu",
+          "Sonu Srivastava",
+          "Suman Santra",
+          "Shivaji Rao",
+          "Chandrasekhar Salluri",
+          "Shweta Suryawanshi",
+          "Shubham Sharma",
+          "Harsha",
+          "Madhusudhan Chodavarapu",
+          "Jagadeesh Jayakumar",
+          "Vijaya kumar"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the employee involved in or associated with the recorded unsafe event, used to identify personnel for incident tracking and accountability."
+      },
+      "subcontractor_company_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Amitav jena",
+          "Avinash kumar",
+          "Band enterprise",
+          "Brand enterprise",
+          "Dalchand",
+          "Don’t know",
+          "Girish",
+          "Gulammohammad j shaikh",
+          "Gulammohammad j Shaikh",
+          "Gulammohammad shaikh",
+          "HK / IPS",
+          "Ibs",
+          "Ips",
+          "IpS",
+          "IPS",
+          "I.P.S",
+          "IPSL",
+          "J.S.Services",
+          "Kamsundari sequrity pvt ltd",
+          "Kamsundri subcon"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the subcontractor company involved in the reported unsafe event, capturing variations and aliases as recorded. This identifies the external party associated with the incident for tracking and accountability purposes."
+      },
+      "subcontractor_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "10812",
+          "10813",
+          "110209",
+          "110340",
+          "110691",
+          "1169816",
+          "1185466",
+          "1207962",
+          "1215619",
+          "1234",
+          "1244081",
+          "1258269",
+          "1271513",
+          "12800053",
+          "1280053",
+          "1289701",
+          "12926870",
+          "12 aa",
+          "1318632",
+          "1319707"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier representing the subcontractor involved in the unsafe event, linking to their records. Values are alphanumeric codes corresponding to subcontractor entities associated with the event."
+      },
+      "subcontractor_city": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "City where the subcontractor involved in the unsafe event is located. Used to identify the subcontractor's geographic location within the event report."
+      },
+      "subcontractor_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "PRASANTA PARIDA                                                                                                                                                                                         *110209",
+          "Satish Jadhav                                                                                                                                                                                           *110691",
+          "NA                                                                                                                                                                                                      *NA",
+          "Sanket chaudhari                                                                                                                                                                                        *10490",
+          "Sachin pawar                                                                                                                                                                                            *110235",
+          "Prakash sinha                                                                                                                                                                                           *110454",
+          "Vivek                                                                                                                                                                                                   *110222",
+          "Satish jadhav                                                                                                                                                                                           *110691",
+          "Vinodh                                                                                                                                                                                                  *10815",
+          "Amitav Jena                                                                                                                                                                                             *110628",
+          "Sanjay Kumar                                                                                                                                                                                            *110556",
+          "Gopal Bhoyar                                                                                                                                                                                            *110702",
+          "Don’t know                                                                                                                                                                                              *Don’t know",
+          "sushanta ranjan dixit                                                                                                                                                                                   *10812",
+          "Jayprakash Behera                                                                                                                                                                                       *110340",
+          "Kavali Narasimha                                                                                                                                                                                        *110299",
+          "Sachin pawar                                                                                                                                                                                            *110245",
+          "Suraj Gore                                                                                                                                                                                              *110391",
+          "Prasanta parida                                                                                                                                                                                         *110209",
+          "Hritik kumar singh                                                                                                                                                                                      *110693"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the subcontractor involved in the unsafe event, often including an identifier code appended with an asterisk. This field captures the individual subcontractor's name associated with the reported incident in the EI tech safety events."
+      },
+      "kg_name": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Name of the knowledge group or category associated with the unsafe event, used to classify or organize event data within the EI technology context."
+      },
+      "country_name": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Name of the country where the unsafe event occurred, providing geographic context for incident reporting and analysis."
+      },
+      "division": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the organizational division associated with the unsafe event, indicating the specific business unit or sector responsible. Used to categorize and analyze events by division within the company."
+      },
+      "department": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific department within the organization where the unsafe event occurred or is associated. This helps categorize incidents by organizational units for targeted safety analysis and reporting."
+      },
+      "city": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the city where the unsafe event occurred, used to identify the event location within the reporting region. This helps in analyzing geographic patterns of safety incidents."
+      },
+      "sub_area": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Specifies the particular subsection or segment within a larger area where the unsafe event occurred, helping to pinpoint the exact location for investigation and reporting purposes."
+      },
+      "district": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the administrative district where the unsafe event occurred, providing geographic context within the organization's operational area. Used to categorize and analyze incidents by district for safety management and reporting purposes."
+      },
+      "zone": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific zone within a site or facility where the unsafe event occurred. Used to pinpoint the location for safety analysis and incident tracking."
+      },
+      "serious_near_miss": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the reported unsafe event involved a serious near miss, capturing potential incidents that nearly resulted in significant harm or damage. Typically recorded as a categorical value to highlight the severity level of the near miss within the safety event report."
+      },
+      "unsafe_act": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Near Miss",
+          "Unsafe Condition",
+          "Unsafe Act"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Categorizes the type of unsafe event observed, specifying whether it was a Near Miss, Unsafe Condition, or Unsafe Act. This classification helps in identifying the nature of safety incidents reported in the workplace."
+      },
+      "unsafe_act_other": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Details describing any additional unsafe acts observed during the event that are not covered by predefined categories, providing context for safety analysis and corrective actions."
+      },
+      "unsafe_condition": {
+        "data_type": "text",
+        "unique_values": [
+          "Inadequate barricades (falling hazard)",
+          "Lack of or improper use of PPE",
+          "Electrical hazards",
+          "Uncontrolled electrical (Lockout / tag)",
+          "Tripping hazard",
+          "Defective tools, equipment, or supplies",
+          "Inadequate control systems (inspection, E Stop etc)",
+          "Fall Hazard exposure",
+          "Fire and chemical hazards",
+          "Housekeeping issue",
+          "Other",
+          "Bypass safety rules or removal of safety devices",
+          "Pit access hazard",
+          "Operating without following adequate procedure",
+          "Missing guards (cwt, machine, electrical, etc ...)",
+          "Position below suspended/moving load",
+          "Using defective equipment",
+          "Near Miss Action",
+          "Lack of control of elevator",
+          "Hoisting / rigging failure (tools or method)"
+        ],
+        "is_nullable": true,
+        "description": "Details the specific hazardous condition identified during an unsafe event, such as equipment defects, environmental risks, or procedural lapses, contributing to workplace safety incidents."
+      },
+      "unsafe_condition_other": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Details describing any additional unsafe conditions observed during the event that are not covered by predefined categories, providing context for safety assessments and follow-up actions."
+      },
+      "work_stopped": {
+        "data_type": "character varying",
+        "unique_values": [
+          "YES",
+          "NO"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether work was halted due to the unsafe event, with possible values 'YES' or 'NO'. This helps track if immediate action was taken to stop operations for safety reasons."
+      },
+      "stop_work_nogo_violation": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Fall Protection",
+          "Hoisting / Rigging",
+          "Log Out / Tag Out",
+          "Safe Hoistway Access"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Indicates the specific safety violation that triggered a work stoppage or no-go decision during an unsafe event. Examples include issues like Fall Protection or Hoisting/Rigging violations. This helps categorize critical safety breaches requiring immediate attention."
+      },
+      "nogo_violation_detail": {
+        "data_type": "text",
+        "unique_values": [
+          "Pit was not cleaned",
+          "Cut hend",
+          "Yes, thread was failure at machine bed",
+          "Yes water in pit electrical energy hazards",
+          "No other safety issue",
+          "Non",
+          "Water seepage in pit so not accessible in the pit",
+          "Pit  access issue",
+          "Material stuk outside in lift entrance",
+          "Water seepage in pit informed to customer removed the water",
+          "No issue",
+          "Chance of electrical shock",
+          "No",
+          "Water logging in pit",
+          "Machine brake band broken",
+          "Honey bee & hive found at upper side of ascalator",
+          "Found oil spilt in pit. Tripping hazard",
+          "Governor pit pulley wait upper side",
+          "Any item in a moving lift may fall down the hall so the lift is stop",
+          "Metro junction Mall Roof Work under process time  Rainy water leakage Escalator pit area."
+        ],
+        "is_nullable": true,
+        "description": "Details describing specific safety violations or conditions that caused a \"no-go\" situation, preventing work continuation due to identified hazards or unsafe conditions in the event."
+      },
+      "stop_work_duration": {
+        "data_type": "character varying",
+        "unique_values": [
+          "One Day or Less",
+          "More than one day"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Indicates the duration for which work was halted due to an unsafe event, categorized as either 'One Day or Less' or 'More than one day'. This helps assess the impact and severity of safety incidents on operational continuity."
+      },
+      "other_safety_issues": {
+        "data_type": "text",
+        "unique_values": [
+          "Pit water entered we stopped one day for dry purpose after that need to verify and then will start work",
+          "Car top recalls no available inform",
+          "Involve public safety in electrical hazards in school",
+          "Work stop because pit light not working",
+          "Escalator handrail speed lass then Escalator step speed in this condition passenger could fall down",
+          "Pit light issue",
+          "Cop damaged",
+          "Nut boult pouch found on rail bracket",
+          "New two pin prchesed and replaced and work start",
+          "3pin socket found broken",
+          "Escalator Handrail Belt E Profile not fixing properly",
+          "While going into the machine room, it fell into the wooden door",
+          "Electrical Hazard minimising.",
+          "Water seepage carto informed customer damage part will be chargeable",
+          "Pit light not available",
+          "Door sensor replace",
+          "Issue Identified, KF sw cable routing done & solved problem",
+          "Car door damage damage",
+          "Car light and fan wire cut by mice  it may cause electric hazard",
+          "Car header coupler was bend in position"
+        ],
+        "is_nullable": true,
+        "description": "Details of additional safety concerns or issues observed during the unsafe event, providing context beyond predefined categories. This text field captures specific descriptions such as equipment malfunctions, hazards, or conditions affecting safety at the incident site."
+      },
+      "comments_remarks": {
+        "data_type": "text",
+        "unique_values": [
+          "Pit was not cleaned",
+          "Cut hend",
+          "Yes, thread was failure at machine bed",
+          "Yes water in pit electrical energy hazards",
+          "No other safety issue",
+          "Non",
+          "Water seepage in pit so not accessible in the pit",
+          "Pit  access issue",
+          "Material stuk outside in lift entrance",
+          "Water seepage in pit informed to customer removed the water",
+          "No issue",
+          "Chance of electrical shock",
+          "No",
+          "Water logging in pit",
+          "Machine brake band broken",
+          "Honey bee & hive found at upper side of ascalator",
+          "Found oil spilt in pit. Tripping hazard",
+          "Governor pit pulley wait upper side",
+          "Any item in a moving lift may fall down the hall so the lift is stop",
+          "Metro junction Mall Roof Work under process time  Rainy water leakage Escalator pit area."
+        ],
+        "is_nullable": true,
+        "description": "Detailed observations and notes provided by the reporter regarding the unsafe event, including specific hazards, conditions, or issues encountered at the site. This text field captures qualitative remarks that supplement the event's classification and support follow-up actions."
+      },
+      "event_requires_sanction": {
+        "data_type": "character varying",
+        "unique_values": [
+          "YES",
+          "NO"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the reported unsafe event requires formal sanction or disciplinary action, with possible values 'YES' or 'NO'. This helps prioritize follow-up and enforcement measures within safety management."
+      },
+      "action_description_1": {
+        "data_type": "text",
+        "unique_values": [
+          "Snake present in pit so inform customers & snake rescue team . Snake remove from pit",
+          "floor mat stuck in car door",
+          "Asked customer provide railing or barricading .",
+          "Water seepage in car top,Lift Kept Shut down &  , inform to client.",
+          "Light not working of lift",
+          "2 nos shaft light not working",
+          "Smoke window covered by nest then cleaned",
+          "Missuse by customer unsafe condition informed customer",
+          "Tabale",
+          "Db box cover is missing plz provide the cover for customer scope",
+          "Mc cut out not closing",
+          "Unwanted material On front of controller",
+          "Stop was not working need to be replaced",
+          "Tube light Was not proper position and not Cleaned",
+          "Ard battery weak",
+          "Fireman switch glass is broken",
+          "Car door belt found cracked so replaced the belt with new one.",
+          "Glass broken",
+          "Material stuk outside the lobby area and I told to customer to remove material",
+          "Top floor near controller area inadequate lights."
+        ],
+        "is_nullable": true,
+        "description": "Detailed narrative of the first corrective or preventive action taken in response to an unsafe event, describing steps like notifications, repairs, or safety measures implemented."
+      },
+      "action_description_2": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed explanation of the second corrective or preventive action taken in response to an unsafe event, providing additional context beyond the first action description."
+      },
+      "action_description_3": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed narrative of the third corrective or preventive action taken in response to an unsafe event, capturing specific measures or steps documented as text."
+      },
+      "action_description_4": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed narrative of the fourth corrective or preventive action taken in response to an unsafe event, capturing specific measures or steps documented as text."
+      },
+      "action_description_5": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed narrative of the fifth corrective or preventive action taken in response to an unsafe event, capturing specific measures or steps documented as text."
+      },
+      "image": {
+        "data_type": "character varying",
+        "unique_values": [
+          "1000143226.jpg",
+          "1000170484.jpg",
+          "1000529315.jpg",
+          "1000707862.jpg",
+          "1000567937.jpg",
+          "IMG_20250602_125726.jpg",
+          "1000456825.jpg",
+          "1000108827.jpg",
+          "IMG_20250310_160210.jpg",
+          "1000072375.jpg",
+          "1000101767.jpg",
+          "1000298070.jpg",
+          "1000153813.jpg",
+          "1000264369.jpg",
+          "1000184971.jpg",
+          "1000025499.jpg",
+          "1000007590.jpg",
+          "cdv_photo_1744212454.jpg",
+          "1000540183.jpg",
+          "1000152924.jpg"
+        ],
+        "max_length": 500,
+        "is_nullable": true,
+        "description": "Filename of the image documenting the unsafe event, typically stored as a JPEG file. Used to visually support incident reports in the unsafe_events_ei_tech table."
+      },
+      "status": {
+        "data_type": "character varying",
+        "unique_values": [
+          "IGNORED",
+          "0",
+          "SAP"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Indicates the current processing state or classification of the unsafe event, such as whether it has been ignored or assigned a specific code like '0' or 'SAP'. This helps track the event's review or resolution status within safety management workflows."
+      },
+      "region": {
+        "data_type": "character varying",
+        "unique_values": [
+          "NR 1",
+          "WR 1",
+          "WR 2",
+          "SR 1",
+          "SR 2",
+          "NR 2"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifies the specific regional zone associated with the unsafe event, categorized by area codes such as 'NR 1' or 'WR 2'. This helps in analyzing event distribution across different operational regions within the organization."
+      },
+      "db_uploaded_date": {
+        "data_type": "timestamp without time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:08:51.546724",
+          "max: 2025-08-03 14:13:18.026967"
+        ],
+        "is_nullable": false,
+        "description": "Timestamp indicating when the unsafe event record was uploaded to the database. Reflects the exact date and time the data entry was completed, aiding in tracking data submission timelines."
+      },
+      "id": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 1",
+          "max: 27483"
+        ],
+        "is_nullable": false,
+        "description": "Unique identifier for each record in the unsafe_events_ei_tech table, representing individual unsafe event entries. Values range from 1 to 27,483, ensuring distinct tracking of reported incidents."
+      },
+      "created_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:08:51.546724+00:00",
+          "max: 2025-08-03 14:13:18.026967+00:00"
+        ],
+        "is_nullable": true,
+        "description": "Timestamp with time zone indicating when the unsafe event record was initially created in the system. Reflects the exact date and time the event entry was logged, supporting accurate tracking and auditing."
+      },
+      "updated_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Timestamp indicating the most recent update to the unsafe event record, reflecting changes or edits made after the initial creation. This helps track the latest status or modifications in the event details."
+      }
+    },
+    "unsafe_events_srs": {
+      "event_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "UE2025IND333338",
+          "UE2025IND333346",
+          "UE2025IND333347",
+          "UE2025IND333352",
+          "UE2025IND333400",
+          "UE2025IND333415",
+          "UE2025IND333459",
+          "UE2025IND333480",
+          "UE2025IND333485",
+          "UE2025IND333488",
+          "UE2025IND333529",
+          "UE2025IND333530",
+          "UE2025IND333625",
+          "UE2025IND333628",
+          "UE2025IND333629",
+          "UE2025IND333633",
+          "UE2025IND333667",
+          "UE2025IND333735",
+          "UE2025IND333779",
+          "UE2025IND333780"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Unique identifier for each unsafe event record, combining event year, location code, and a sequential number to ensure distinct tracking within the safety reporting system."
+      },
+      "reporter_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "KiranChikkarachayya",
+          "SuryakanthMarkunde",
+          "Sasi kumarRamamurthy",
+          "ShunmugaPriyan",
+          "Maheshaputtaraju",
+          "LalitKumar",
+          "BalajiRadhakrishnan",
+          "EbrainSelvan",
+          "MohammedKhan",
+          "SujayKumarShambugowda",
+          "EpiliNiranjan",
+          "RiteshChouhan",
+          "PravinShirke",
+          "RahulAllanka",
+          "AxayPardhi",
+          "SabariGiri",
+          "AtulGola",
+          "RajeevMathew",
+          "JyothikalyanKolipaka",
+          "AmitsinghNegi"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the individual who reported the unsafe event, typically recorded as a full name string. This identifies the source of the report for tracking and follow-up purposes within safety incident records."
+      },
+      "reported_date": {
+        "data_type": "date",
+        "unique_values": [
+          "min: 2025-01-06",
+          "max: 2025-06-23"
+        ],
+        "is_nullable": true,
+        "description": "Date when the unsafe event report was officially submitted or recorded in the system. Reflects the reporting timeline, which may differ from the actual event date."
+      },
+      "reporter_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "706080",
+          "704077",
+          "20005058",
+          "20084131",
+          "718344",
+          "20104969",
+          "716313",
+          "20012018",
+          "713651",
+          "20001841",
+          "20068476",
+          "20069436",
+          "20067224",
+          "20066179",
+          "700501",
+          "20004540",
+          "20016707",
+          "700880",
+          "20004922",
+          "700542"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier representing the individual who reported the unsafe event, typically a unique alphanumeric code assigned to each reporter. Used to link the event report to the specific person responsible for submitting the information."
+      },
+      "date_of_unsafe_event": {
+        "data_type": "date",
+        "unique_values": [
+          "min: 2025-01-01",
+          "max: 2025-06-21"
+        ],
+        "is_nullable": true,
+        "description": "The date when the unsafe event occurred, recorded within the first half of 2025. This field helps track and analyze the timing of incidents reported in the safety reporting system."
+      },
+      "time_of_unsafe_event": {
+        "data_type": "character varying",
+        "unique_values": [
+          "09:34:03",
+          "20:03:00",
+          "09:14:40",
+          "10:08:45",
+          "11:06:35",
+          "12:10:01",
+          "11:23:29",
+          "16:39:37",
+          "15:10:42",
+          "12:58:13",
+          "15:04:19",
+          "11:47:08",
+          "12:14:21",
+          "16:01:19",
+          "09:20:16",
+          "12:12:04",
+          "11:26:42",
+          "10:08:50",
+          "13:15:53",
+          "12:47:35"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Records the specific time (HH:MM:SS) when an unsafe event occurred, complementing the date of the incident. This character varying field captures the event's occurrence time for detailed incident tracking and analysis."
+      },
+      "unsafe_event_type": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Unsafe Condition,Near Miss",
+          "Unsafe Condition",
+          "Unsafe Act",
+          "Unsafe Condition,Unsafe Act",
+          "Unsafe Act,Near Miss",
+          "Unsafe Act,Unsafe Condition",
+          "Near Miss,Unsafe Condition",
+          "Near Miss,Unsafe Act",
+          "Near Miss",
+          "Unsafe Act,Unsafe Condition,Near Miss"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the categories of safety issues observed during an event, such as Unsafe Condition, Unsafe Act, and Near Miss. Multiple types can be recorded together, indicating combined safety concerns for the reported unsafe event."
+      },
+      "business_details": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Service maintenance",
+          "Repair",
+          "Other",
+          "New installation",
+          "Modernisation"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the type of business activity associated with the unsafe event, such as service maintenance, repair, new installation, modernisation, or other. This categorization helps contextualize the event within operational processes."
+      },
+      "site_reference": {
+        "data_type": "text",
+        "unique_values": [
+          "SP Joyville",
+          "Emarald Mall",
+          "Shree Sahaya Honesty",
+          "58 West",
+          "Carnation Chs",
+          "Upvan",
+          "Shangrila",
+          "484, Chandani Chowk, Katra Asharfi , 20065139",
+          "A2/1 Rohini sector 3 Rohini",
+          "Shivajinagar",
+          "Mhada 5 B",
+          "NHAI",
+          "NCRTC - RRTS Delhi Meerut Project U.P India.",
+          "City centre mall Paratwada",
+          "Balkar Singh Brar",
+          "E-7/4. Krishna Nagar",
+          "Godrej united",
+          "AVJ Height",
+          "A-19 WHS kirti nagar",
+          "kaveri mercantile"
+        ],
+        "is_nullable": true,
+        "description": "Identifies the specific site or location associated with the unsafe event, such as a building name, mall, or address. Provides contextual reference for where the incident occurred within the organization's operational areas."
+      },
+      "unsafe_event_location": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Pit",
+          "Inside car",
+          "Escalator",
+          "Hoistway",
+          "Warehouse / Logistic area",
+          "Machine Room",
+          "Others",
+          "Landing",
+          "Office Area",
+          "Car top"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the physical location where the unsafe event occurred, such as 'Pit', 'Inside car', or 'Machine Room'. This helps identify the exact site within the facility or work environment related to the reported safety incident."
+      },
+      "product_type": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Non Sch Elev",
+          "Eurolift",
+          "Other product",
+          "Other ESC",
+          "Old Sch product MRL",
+          "S95 Series (MW)",
+          "S93 Series (ESC)",
+          "S5 Series",
+          "Old Sch products Traction",
+          "S3 Series",
+          "S97 Series (ESC)",
+          "S7 Series"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the category or model of the product involved in the unsafe event, such as various elevator series and types. This helps identify which product type the safety incident is associated with for analysis and reporting."
+      },
+      "employee_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "20083034.0",
+          "712644.0",
+          "721109.0",
+          "20072405.0",
+          "20123571.0",
+          "715098.0",
+          "20104969.0",
+          "20133087.0",
+          "20092723.0",
+          "20046474.0",
+          "705431.0",
+          "20122086.0",
+          "20004509.0",
+          "20117459.0",
+          "20126439.0",
+          "714501.0",
+          "703678.0",
+          "20003584.0",
+          "20012631.0",
+          "20004540.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Unique identifier for an employee involved in or associated with an unsafe event, stored as a string to accommodate numeric IDs with decimal formatting. This ID links the event to the specific employee for tracking and analysis within safety reports."
+      },
+      "employee_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Ajay Kumar Jha",
+          "Mithilesh Singh",
+          "Dhavalkumar Sathvara",
+          "Jayan Mathew",
+          "Rajesh Ayyappan",
+          "Kamal Kant",
+          "Viswanatha Monappa",
+          "Omkar Shinde",
+          "Raj Kumar",
+          "Pintoo Kumar",
+          "Umesh Babu",
+          "Rinku Sain",
+          "Gajarajan Jayavelu",
+          "Suman Santra",
+          "Shivaji Rao",
+          "Chandrasekhar Salluri",
+          "Layak Ram",
+          "Murahari Narsimulu",
+          "Mukesh Hadpe",
+          "Madhusudhan Chodavarapu"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the employee involved in or associated with the reported unsafe event, recorded as a variable-length string. This identifies personnel linked to safety incidents within the organization."
+      },
+      "subcontractor_company_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Sangeeta Elevator Works",
+          "Balu S",
+          "K D Enterprises",
+          "Three Star Electricals",
+          "Ashwani Kumar Cont",
+          "Rida Enterprises",
+          "Manoj Kumar singh",
+          "Abdul Hakim",
+          "Rakesh Kumar",
+          "Arjun Kumar Mishra",
+          "Pawan Enterprises",
+          "Bishwajit Mishra",
+          "Hijas T E",
+          "Tejmani",
+          "B C Elevators",
+          "Ram Kumar Bairwa",
+          "Arjun Chouhan",
+          "William Ramamurthy",
+          "Pundalik Sapkal",
+          "Narmada Enterprise"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the subcontractor company involved in the reported unsafe event, capturing entities such as 'Sangeeta Elevator Works' or 'K D Enterprises'. This identifies the external organization linked to the incident for tracking and accountability purposes."
+      },
+      "subcontractor_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "1259441.0",
+          "1299736.0",
+          "1278034.0",
+          "1327417.0",
+          "1321311.0",
+          "1157425.0",
+          "1311973.0",
+          "1176615.0",
+          "1287815.0",
+          "1158439.0",
+          "1264179.0",
+          "1293246.0",
+          "1225529.0",
+          "1263199.0",
+          "1229800.0",
+          "1186086.0",
+          "1157431.0",
+          "1288925.0",
+          "1223213.0",
+          "1241566.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier for the subcontractor involved in the unsafe event, stored as a string to accommodate numeric codes with decimal formatting. Links the event to a specific subcontractor entity referenced in related columns such as subcontractor_company_name and subcontractor_name."
+      },
+      "subcontractor_city": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Infra TRD",
+          "Jaipur",
+          "Delhi 1",
+          "RON",
+          "Delhi 3",
+          "JBL",
+          "ROE 1",
+          "RoN",
+          "Navi Mumbai",
+          "Bangalore 2",
+          "Noida",
+          "Mumbai 1",
+          "Mumbai 2",
+          "Hyderabad",
+          "Bangalore 1",
+          "Indore",
+          "Udaipur",
+          "Punjab",
+          "Bangalore",
+          "Warangal"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the city or location associated with the subcontractor involved in the unsafe event. This field captures various city names and site identifiers relevant to the subcontractor's operational area within the event context."
+      },
+      "subcontractor_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Vijay Vind",
+          "Ramkrishna Panigrahy",
+          "Jitender Kumar",
+          "Saravanan G",
+          "William Ramamurthy",
+          "Gajendra Chauhan",
+          "Dinesh S",
+          "Pintoo Kumar",
+          "Umesh Chauhan",
+          "Ram  Gopal",
+          "Thamman  Singh",
+          "Rizwan Yunus khan",
+          "karthick Ganesan",
+          "Firoz Miyan Miyan",
+          "Jasvant Sing",
+          "Manoj Singh",
+          "Yogesh Dudka",
+          "Shrikant  Tuna Dalai",
+          "Vinod Yogi",
+          "UDAY BHOLE"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the subcontractor involved in the unsafe event, capturing individual personnel responsible or associated. This helps link specific subcontractor personnel to reported safety incidents for accountability and analysis."
+      },
+      "kg_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "IND"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Name of the key geographical unit or location associated with the unsafe event, typically represented by a short code such as 'IND'. This column helps categorize events by specific regional or operational areas within the safety reporting system."
+      },
+      "country_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "India"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Name of the country where the unsafe event occurred, represented as a text string. This helps identify the geographical location associated with the reported safety incident."
+      },
+      "division": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Schindler India PVT Ltd. (5000)",
+          "India Elevator factory (8200)"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific company division or business unit associated with the unsafe event, often including the division name and a unique code. This helps categorize events by organizational segment within the safety reporting system."
+      },
+      "department": {
+        "data_type": "character varying",
+        "unique_values": [
+          "FO-EI (10006387)",
+          "TL - NI (10001589)",
+          "FO-EI (10006688)",
+          "EI-GL (10003765)",
+          "KOL-NI (80498704)",
+          "AM - EI (10001511)",
+          "TL-EI-GUR (80549566)",
+          "Ahmedabad & MP (80312958)",
+          "TL-EI-NOIDA (80761789)",
+          "TL-EI (80395430)",
+          "New Installation (10004885)",
+          "AM-NI (80885257)",
+          "MGR-TRD (10004020)",
+          "FO-NI (10005047)",
+          "AM-NI-MUM (80550778)",
+          "FO-EI (10007522)",
+          "TL-NI (80849402)",
+          "FO-EI (10005591)",
+          "GL-NI (80467421)",
+          "TL-EI (80617618)"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific department or organizational unit associated with the unsafe event, often including a code and location in parentheses. This helps link the event to the responsible team or area within the company for tracking and analysis."
+      },
+      "city": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Mumbai 2 (5011)",
+          "Baroda (5014)",
+          "Pune 2 (5012)",
+          "Jharkhand & Bihar (5062)",
+          "Noida (5022)",
+          "Mumbai 1 (5001)",
+          "Auranagabad (5009)",
+          "Chennai (5043)",
+          "Ahmedabad (5005)",
+          "Coimbatore. (5049)",
+          "Guwahati (5064)",
+          "Hubli Dharwad (5050)",
+          "INFRA/TRD (5018)",
+          "Hyderabad 1 (5042)",
+          "Orissa (5063)",
+          "Lucknow (5033)",
+          "North Delhi (5021)",
+          "Schindler India Pvt. Ltd (8200)",
+          "Ludhiana (5025)",
+          "Thane (5002)"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name and code of the city or location associated with the unsafe event, often including area identifiers or site codes. This helps specify where the event occurred within the organization's operational regions."
+      },
+      "sub_area": {
+        "data_type": "character varying",
+        "unique_values": [
+          "5046.0",
+          "5044.0",
+          "5049.0",
+          "5043.0",
+          "5029.0",
+          "5026.0",
+          "5008.0",
+          "5005.0",
+          "5033.0",
+          "5006.0",
+          "5021.0",
+          "5032.0",
+          "5042.0",
+          "5012.0",
+          "5024.0",
+          "5022.0",
+          "5007.0",
+          "5064.0",
+          "5002.0",
+          "5048.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier code representing the specific sub-area within a site where the unsafe event occurred, used for detailed location tracking and analysis. Values correspond to coded sub-area designations linked to the event's location context."
+      },
+      "district": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the administrative district where the unsafe event occurred, providing a geographic reference within the broader location details. Used to categorize and analyze safety incidents by district for reporting and intervention purposes."
+      },
+      "zone": {
+        "data_type": "character varying",
+        "unique_values": [
+          "SCH IND & SA",
+          "S/C IND",
+          "SC-IND"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific operational or safety zone within the site where the unsafe event occurred, such as industrial or scheduled areas. This categorization helps in pinpointing event locations for targeted safety analysis and interventions."
+      },
+      "serious_near_miss": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the reported unsafe event was classified as a serious near miss, with possible values 'Yes' or 'No'. This helps assess the severity and potential risk level of the incident within safety reporting."
+      },
+      "unsafe_act": {
+        "data_type": "text",
+        "unique_values": [
+          "Operating without following adequate procedure, Lack or improper use of PPE, Fall hazard exposure,",
+          "Other, Using defective equipment ,",
+          "Bypass safety rules or removal of safety devices, Inadequate jumper device or process,",
+          "Operating without following adequate procedure, Other,",
+          "Operating without following adequate procedure, Bypass safety rules or removal of safety devices,",
+          "Operating without following adequate procedure, Hoisting/Rigging failure (tools or method), Bypass safety rules or removal of safety devices,",
+          "Lack or improper use of PPE, Fall hazard exposure, Operating without following adequate procedure, Other,",
+          "Other, Inadequate jumper device or process,",
+          "Using defective equipment ,",
+          "Fall hazard exposure,",
+          "Fall hazard exposure, Operating without following adequate procedure, Lack or improper use of PPE,",
+          "Operating without following adequate procedure, Lack or improper use of PPE, Failure to inform about unsafe situation,",
+          "Operating without following adequate procedure, Fall hazard exposure,",
+          "Other,",
+          "Lack or improper use of PPE,",
+          "Lack or improper use of PPE, Failure to inform about unsafe situation,",
+          "Lack of control of elevator, Other,",
+          "Other, Failure to inform about unsafe situation,",
+          "Inadequate jumper device or process, Lack of control of elevator, Bypass safety rules or removal of safety devices,",
+          "Lack or improper use of PPE, Operating without following adequate procedure, Fall hazard exposure, Failure to inform about unsafe situation,"
+        ],
+        "is_nullable": true,
+        "description": "Details of specific unsafe actions or behaviors observed during an incident, recorded as descriptive text. This column captures multiple types of unsafe acts such as procedural violations, improper PPE use, and equipment misuse related to the reported unsafe event."
+      },
+      "unsafe_act_other": {
+        "data_type": "text",
+        "unique_values": [
+          "Pravin forgot to follow 3point contact while entering into Pit, corrected him immediately.",
+          "Improper storage of material at site by employee",
+          "FBH wear not with correct method.",
+          "The technician forgot to close the LDU cover while cartop entry.",
+          "During the PM at the site, I forgot to wear the Goggles.",
+          "Near Moving Walk Way some civil agency are working of welding work without proper precaution then I was stop the work and covered the Panel with sheet and Fire blanket the allowed to work and informed to his safety officer.",
+          "SHA was not proper",
+          "Car top not cleaned & Tool found on car top.",
+          "Inadequate lighting in the elevator shaft while making the entry for maintenance of the elevator",
+          "Miss the explain the emergency plan, before work start",
+          "Light fuse in machine room",
+          "Gap in Barricade, small material may fall inside shaft.",
+          "Technician did not follow instructions to keep face away, used right hand when turning on shaft light",
+          "CE not fix controller cover in car top entery",
+          "Employee was carrying the expired ointment in his first aid kit, got expired in 30-03-2025.",
+          "While coming down from stairs when using phone.",
+          "One civil team worker was shift the scaffold member and during cross the building suspension joint his one leg skipped on edge of plate then his fell down and suffered with minor brushes and cut on knee.",
+          "A sharp nail was on the barricades handle while the FT was using the barricade at ground floor.",
+          "The barricade kept in infront of the opened escalator pit was not sufficient; stopped the work and asked him to cover it properly.",
+          "Big cut piece of Floor Marbel around 1.5M X 250mm kept vertically on the support of Control Panel which was unstable, chances of falling the same on persons working nearby."
+        ],
+        "is_nullable": true,
+        "description": "Detailed narrative describing specific unsafe acts observed during an event, capturing deviations from safety protocols or hazardous behaviors contributing to the incident."
+      },
+      "unsafe_condition": {
+        "data_type": "text",
+        "unique_values": [
+          "Poor lighting,",
+          "Falling objects hazard, Electrical hazards,",
+          "Other, Tripping hazard,",
+          "Missing guards (cwt, machine, electrical, etc â€¦), Housekeeping issue, Poor lighting, Other,",
+          "Poor lighting, Falling objects hazard,",
+          "Housekeeping issue,",
+          "Electrical hazards, Poor lighting,",
+          "Housekeeping issue, Poor lighting, Falling objects hazard,",
+          "Pit access hazard, Electrical hazards, Other,",
+          "Inadequate barricades (falling hazard), Electrical hazards,",
+          "Tripping hazard, Housekeeping issue, Other,",
+          "Other, Electrical hazards, Poor lighting,",
+          "Falling objects hazard, Poor lighting,",
+          "Inadequate barricades (falling hazard), Falling objects hazard, Housekeeping issue,",
+          "Pit access hazard, Housekeeping issue, Other,",
+          "Tripping hazard, Pit access hazard, Housekeeping issue,",
+          "Fire and chemical hazards, Housekeeping issue, Poor lighting, Electrical hazards,",
+          "Electrical hazards, Housekeeping issue,",
+          "Pit access hazard,",
+          "Other,"
+        ],
+        "is_nullable": true,
+        "description": "Details of hazardous physical or environmental conditions identified during an unsafe event, such as poor lighting, electrical hazards, or tripping hazards. This text field captures one or multiple unsafe conditions contributing to the event."
+      },
+      "unsafe_condition_other": {
+        "data_type": "text",
+        "unique_values": [
+          "Water logging in pit due to heavy rainfall",
+          "pictographs & Direction sensor need to be replaced",
+          "Lifelines not protected from sharp edge",
+          "Cable & internet wire laying at the entry point of machine room staircase",
+          "RCBO NOT TRIP WITH TEST BUTTON",
+          "DO button not working, needs to replace SBGDAF PCB",
+          "Car Door Sync rope got elongated",
+          "Other",
+          "LMR AC was near Machine, It might have hurt while working there.So i removed it",
+          "Face away sticker was not attached in the DB box.",
+          "Handrail not yet fixed for staircase walk with caution",
+          "While team working in shaft water started flooding inside shaft from 14th floor. While checking, the water pipeline found open and water was spread on whole floor. Reported and closed the same immidiately and stopped the work",
+          "Barricades from Landings are removed by customer and used Single phase from shaft.",
+          "Mcb box near extra material",
+          "Water entry in stores",
+          "Water seepage into lift shaft due to negligence of another Civil Agency.",
+          "Port found damaged, needs to replace",
+          "Pit need to be cleaned",
+          "While conducting TBT training in the morning, the hand gloves of the hoisting team were found dirty and damaged.",
+          "Glass broken"
+        ],
+        "is_nullable": true,
+        "description": "Detailed descriptions of specific unsafe conditions observed during events, capturing unique or uncommon hazards not covered by standard categories. This text field provides context and examples of issues such as equipment faults, environmental hazards, or procedural lapses reported at various sites."
+      },
+      "work_stopped": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether work was halted due to the unsafe event, with possible values 'Yes' or 'No'. This reflects if operations were stopped to address safety concerns during the incident."
+      },
+      "stop_work_nogo_violation": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether a stop work order was issued due to a No-Go violation during the unsafe event. Values 'Yes' or 'No' reflect if the violation triggered immediate work stoppage for safety reasons."
+      },
+      "nogo_violation_detail": {
+        "data_type": "text",
+        "unique_values": [
+          "Fall Protection,",
+          "Jumper,",
+          "Jumper, Subcons Certificate,",
+          "Safe Hoistway Access,",
+          "Subcons Certificate,"
+        ],
+        "is_nullable": true,
+        "description": "Details of specific safety violations or non-compliance issues identified during the unsafe event, such as missing fall protection or subcontractor certification, recorded as descriptive text."
+      },
+      "stop_work_duration": {
+        "data_type": "character varying",
+        "unique_values": [
+          "One Day or Less",
+          "More than one day"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Duration category indicating how long work was stopped due to an unsafe event, with values such as 'One Day or Less' or 'More than one day'. This helps assess the impact and severity of the incident on operations."
+      },
+      "other_safety_issues": {
+        "data_type": "text",
+        "unique_values": [
+          "card board found spread",
+          "Materials in the storeroom was stacked one above the other got it corrected at site .",
+          "distance between two barricade was more than 50 mm gap. electrical hazard was present on stair case.",
+          "Customer iron was placed near the working area and store tech failed to identify the same",
+          "Water seepage issue in Pit so informed to customer.",
+          "During Site visit, noticed that 1st floor landing safety barricade was not closed properly and it may chance to fall down at any situation.\n\nImmediately informed to FT to stop the present activity and ask him to fix the safety barricades properly with lockable conditions.",
+          "work stopped door damage and sensor pitting",
+          "The lifeline used for the HRA was kept in open in front of the customer entrance. The engineer was advised to use the gunny bags to store it as it some customer may fall.",
+          "Not Known the exact criteria of checking the validity of FBH",
+          "ELECB Box was not Tripping some of the sockets.",
+          "Pit water removed",
+          "PIT WITH DEBRIS & DUST",
+          "UNBOXED CARTON KEPT IN STORE-FIRE HAZARD",
+          "Before entering the pit employee found a CENTIPEDE in the lift pit, employee removed it with customer support and continue the work.",
+          "Poor lighting in store room area.",
+          "Illumination low",
+          "Housekeeping issue at lift sore room.\nTripping hazard found nearby lift shaft.",
+          "Top floor no barricading done got it temporally fixed at site .",
+          "Test Certificates not verified before using hoisting equipment",
+          "unsafe electrical connection in lift lobby."
+        ],
+        "is_nullable": true,
+        "description": "Detailed textual notes describing additional safety concerns or hazards observed during the unsafe event, supplementing primary unsafe act and condition information."
+      },
+      "comments_remarks": {
+        "data_type": "text",
+        "unique_values": [
+          "Pit light not working inform to tha customer",
+          "Poor lighting is observed at 2nd basement floor. Informed customer about the same. Immediately customer has done proper lighting arrangement & then started further installation activity.",
+          "Access route hazard near entry gate.",
+          "Educated at site. and fixed",
+          "During working in Pit, he forgot to apply both Pit Stop Switches",
+          "Water seepage issue in Pit so informed to customer.",
+          "With the help of customer some of area scaffolding removed for easily walking.",
+          "During site visit it is observed that ELCB box supply plug damaged. Informed FT about the same. Immediately FT has replaced new plug & then restarted further activity.",
+          "The lifeline used for the HRA was kept in open in front of the customer entrance. The engineer was advised to use the gunny bags to store it as it some customer may fall.",
+          "Scaffolding was loose but employee was working on it STOP the work and ask him to correct the scaffolding then start the work.",
+          "Fall hazards at top landing",
+          "On the way of lift entrance at 1st floor customers debris is observed. Stopped work & informed customer about the same. Customer has immediately removed the debris & then started further installation activity.",
+          "The shaft light was not working Properly. STOP the work.",
+          "CE immediately realized his mistake & reported it as Fearless reporting",
+          "Less amount of water in Pit ,",
+          "Pending",
+          "water found in pit area.",
+          "Found that people were working on scaffolding to tighten it. But they should not step on it if it found loose, but here one of the men was found with one leg on it. Careless approach seen.",
+          "Light was fused, asked customer for light and changed the same",
+          "Customer material found in front of hoistway, safety signs are not provided for 2 floor, immediately corrected"
+        ],
+        "is_nullable": true,
+        "description": "Detailed textual notes and observations related to each unsafe event, including descriptions of hazards, actions taken, communications with customers, and any immediate corrective measures implemented on site."
+      },
+      "event_requires_sanction": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the reported unsafe event necessitates formal disciplinary or corrective action. Values 'Yes' or 'No' specify if a sanction is required based on the event's severity or nature."
+      },
+      "action_description_1": {
+        "data_type": "text",
+        "unique_values": [
+          "Improper Housekeeping",
+          "Rainwater entering into Lift Shaft at Eco Park, informed to concerned supervisor.",
+          "Customer meter room electrical panel cover missing and wiring not proper. Informed customer and rectified on same day",
+          "Load hook tag not in Place",
+          "Bulk head fixing & shaft lights reconditioning shall be done",
+          "Pravin forgot to follow 3point contact while entering into Pit, corrected him immediately.",
+          "The area near the lift found a opening which can cause fall hazard, no proper signage or baricades made by the cutsomer in alerting or restrictig the one access.",
+          "Customer material stored in front of landing door at top floor, I have already informed to customer. please remove it before due date .",
+          "\"Store area mai light kam thi \nOr material store area se lift shaft tak\n low light /No light mai work kiya.\"\tSame day customer supervisor se contact krke light lgwai",
+          "Employee open the barricade fully it indicates fall hazards exposure",
+          "The travelling cable was cut and this may cause electrical accidents while performing maintenance. Immediately informed to the Customer.",
+          "Water seepage issue in Pit so informed to customer.",
+          "Need to change plug and provide new one.",
+          "Inadequate barricades in adjacent shaft openings (falling hazard)",
+          "Some carton was scattered in front of lift shaft so PE has discus with customer and remove the carton from there.",
+          "RCBO NOT TRIP WITH TEST BUTTON",
+          "at the time of morning briefing the technicians found the material was kept in front of the barricade on the 8th floor. Customer was asked to remove the same and then work was resumed.",
+          "Manoj has not checked multimeter continuity , he promised that in future is will check multimeter before using .",
+          "While working on L5 false car suddenly water started falling on false car from machine room area. Inform to customer to take corrective actions to stop the water flow.",
+          "replace unsafe member of scaffolding and sanction to PE."
+        ],
+        "is_nullable": true,
+        "description": "Detailed narrative of the first corrective or preventive action taken in response to an unsafe event, describing measures, observations, or communications related to hazard mitigation."
+      },
+      "action_description_2": {
+        "data_type": "text",
+        "unique_values": [
+          "3 Point contact not made while using the Pit ladder",
+          "Customer side main breaker not visible",
+          "Discussed with customer to arrange the new hook."
+        ],
+        "is_nullable": true,
+        "description": "Detailed narrative of the second corrective or preventive action taken in response to an unsafe event, describing specific measures or communications to address identified safety issues."
+      },
+      "action_description_3": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed narrative of the third corrective or preventive action taken in response to an unsafe event, capturing specific measures or steps documented for safety improvement."
+      },
+      "action_description_4": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Detailed explanation of the fourth corrective or preventive action taken in response to an unsafe event, capturing specific steps or measures to address identified hazards or risks."
+      },
+      "action_description_5": {
+        "data_type": "text",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Details of the fifth corrective or preventive action taken in response to an unsafe event, describing measures implemented to address identified safety issues. This text field captures specific steps or interventions documented for tracking and follow-up."
+      },
+      "branch": {
+        "data_type": "character varying",
+        "unique_values": [
+          "RON",
+          "RoN",
+          "JBL",
+          "Rajasthan",
+          "Bangalore 2",
+          "Noida",
+          "ONE",
+          "Mumbai 1",
+          "Mumbai 2",
+          "Bangalore 1",
+          "Mangalore",
+          "Warangal",
+          "Chhattisgarh & Nagpur",
+          "Andhra Pradesh",
+          "Pune 2",
+          "South Delhi",
+          "Gurgaon",
+          "North Delhi",
+          "Tamil Nadu",
+          "Kolkata"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific branch or location associated with the unsafe event, representing various offices or sites across different cities and regions. This helps categorize events by their operational branch for reporting and analysis."
+      },
+      "region": {
+        "data_type": "character varying",
+        "unique_values": [
+          "SR 2",
+          "INFRA / TRD",
+          "NR 2",
+          "NR 1",
+          "WR 1",
+          "WR 2",
+          "SR 1"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifies the specific operational region or sector where the unsafe event occurred, using codes or abbreviations such as 'SR 2' or 'INFRA / TRD'. This helps categorize events by geographic or functional areas within the organization."
+      },
+      "db_uploaded_date": {
+        "data_type": "timestamp without time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:10:37.200561",
+          "max: 2025-08-03 14:05:58.672693"
+        ],
+        "is_nullable": false,
+        "description": "Timestamp indicating when the unsafe event record was uploaded to the database. Reflects the exact date and time the data entry was made, distinct from the actual event occurrence dates."
+      },
+      "id": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 1",
+          "max: 16366"
+        ],
+        "is_nullable": false,
+        "description": "Unique integer identifier for each unsafe event record, ranging from 1 to 16,366, used to distinctly reference and manage individual entries in the unsafe_events_srs table."
+      },
+      "created_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:10:37.200561+00:00",
+          "max: 2025-08-03 14:05:58.672693+00:00"
+        ],
+        "is_nullable": true,
+        "description": "Timestamp with time zone indicating when the unsafe event record was initially created in the system. Reflects the exact date and time the event entry was logged, supporting accurate tracking and auditing."
+      },
+      "updated_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Timestamp recording the most recent update to the unsafe event record, reflecting changes or edits made after the initial creation."
+      }
+    },
+    "unsafe_events_ni_tct": {
+      "reporting_id": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 9057",
+          "max: 12402171"
+        ],
+        "is_nullable": true,
+        "description": "Unique identifier for each reported unsafe event, used to track and reference incidents within the safety monitoring system. Values range from 9057 to over 12 million, indicating a sequential or cumulative reporting sequence."
+      },
+      "status_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "SAP",
+          "Pending"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Indicates the current processing state of the unsafe event record, such as 'SAP' for events logged in the SAP system or 'Pending' for events awaiting further action. This status helps track the workflow stage within the safety reporting process."
+      },
+      "status": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Pending",
+          "Approved"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Indicates the current approval state of the unsafe event report, showing whether it is 'Pending' review or has been 'Approved' for further action or record-keeping."
+      },
+      "location_key": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 5001",
+          "max: 5065"
+        ],
+        "is_nullable": true,
+        "description": "Unique identifier for the specific location associated with each unsafe event, represented as an integer within the range 5001 to 5065. This key links the event to a defined site or facility within the reporting system."
+      },
+      "location": {
+        "data_type": "character varying",
+        "unique_values": [
+          "5050 - Hubli",
+          "5062 - JBL1",
+          "5021 - North Delhi",
+          "5024 - Rajasthan",
+          "5047 - Mangalore",
+          "5025 - RoN",
+          "5023 - Gurgaon",
+          "5008 - Chhattisgarh & Nagpur1",
+          "5030 - South Delhi",
+          "5035 - North Delhi1",
+          "5002 - Thane & KDMC",
+          "5043 - Tamil Nadu",
+          "5063 - ONE",
+          "5006 - Ahmedabad & MP1",
+          "5005 - Ahmedabad & MP",
+          "5014 - Ahmedabad & MP2",
+          "5044 - Cochin",
+          "5065 - JBL2",
+          "5001 - Mumbai 1",
+          "5041 - Bangalore 1"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific site or area where the unsafe event occurred, combining a numeric code with a location name such as city or region. This helps in categorizing and tracking incidents by their geographic or operational site within the organization."
+      },
+      "branch_key": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 5001",
+          "max: 5065"
+        ],
+        "is_nullable": true,
+        "description": "Identifier for the branch where the unsafe event occurred, represented as an integer key ranging from 5001 to 5065. Used to link event records to specific branch locations within the organization."
+      },
+      "no": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: -5065",
+          "max: -5001"
+        ],
+        "is_nullable": true,
+        "description": "Unique identifier number for each unsafe event record, represented as a negative integer within the range -5065 to -5001, used to track and reference specific incidents in the Northern Ireland TCT dataset."
+      },
+      "branch_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Chhattisgarh & Nagpur",
+          "Thane & KDMC",
+          "Andhra Pradesh",
+          "Pune 2",
+          "South Delhi",
+          "Gurgaon",
+          "North Delhi",
+          "JBL",
+          "RoN",
+          "Tamil Nadu",
+          "Rajasthan",
+          "Bangalore 2",
+          "Kolkata",
+          "Noida",
+          "Cochin",
+          "ONE",
+          "Mumbai 1",
+          "Hyderabad 2",
+          "Mumbai 2",
+          "Pune 1"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the branch or location associated with the unsafe event, representing regional offices or operational sites such as 'Mumbai 1', 'South Delhi', or 'Chhattisgarh & Nagpur'. This helps identify where the incident was reported or occurred within the organization's network."
+      },
+      "region_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "South 2",
+          "West 1",
+          "South 1",
+          "North 1",
+          "North 2",
+          "West 2"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier for the geographic region where the unsafe event occurred, combining area name and zone number (e.g., 'South 2', 'West 1'). Used to categorize events by specific regional subdivisions within the organization."
+      },
+      "region": {
+        "data_type": "character varying",
+        "unique_values": [
+          "NR 1",
+          "WR 1",
+          "SR 1",
+          "WR 2",
+          "SR 2",
+          "NR 2"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifies the specific geographic area or zone within the organization where the unsafe event occurred, using coded labels such as 'NR 1' or 'WR 2'. This helps categorize incidents by region for reporting and analysis purposes."
+      },
+      "reporter_sap_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "20005210",
+          "20151499",
+          "712862",
+          "20075750",
+          "719566",
+          "20115885",
+          "715568",
+          "714501",
+          "20003067",
+          "20085431",
+          "20005711",
+          "20003078",
+          "20084093",
+          "20041497",
+          "20109495",
+          "701026",
+          "720963",
+          "20121016",
+          "20002904",
+          "717966"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier representing the SAP system ID of the individual who reported the unsafe event. This alphanumeric code links the reporter to their official employee record within the organization's SAP database."
+      },
+      "reporter_name": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Seenu R",
+          "Basawraj Kodesur",
+          "Shyam Ladke",
+          "Rahul R",
+          "Pankaj Singh Almiya",
+          "Pankaj  Sharma",
+          "Jaganath Patro",
+          "Aryan Patel",
+          "Ajinky Yuvraj  Pawar",
+          "Karan Ankush Gurghate",
+          "BhagatsinH BARAD",
+          "Sangam A",
+          "Omkar Shinde",
+          "Srinivas Bandari",
+          "Ajnish Kumar",
+          "Anil Vishwakarama",
+          "Ayush Lamkhade",
+          "Layak Ram",
+          "Anil tajve",
+          "Naresh kumar Arumugam"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Name of the individual who reported the unsafe event, recorded as a text string. This identifies the person responsible for submitting the incident details in the safety tracking system."
+      },
+      "designation_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "PE",
+          "GL",
+          "SCF",
+          "FTC",
+          "IPS",
+          "FT"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Code identifying the employee's role or position involved in the unsafe event, using standardized abbreviations such as 'PE', 'GL', and 'SCF'. This key links to the designation column to categorize personnel by their job function within the incident report."
+      },
+      "designation": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Group Leader",
+          "Project Engineer",
+          "FTC",
+          "Subcontractor Fitter",
+          "IPS",
+          "Fitter"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Role or job title of the individual involved in the unsafe event, such as 'Group Leader' or 'Project Engineer'. This identifies the person's position within the organization at the time of the incident."
+      },
+      "gl_id_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "912.0",
+          "825.0",
+          "705.0",
+          "1270.0",
+          "3148.0",
+          "4081.0",
+          "4217.0",
+          "16449.0",
+          "1202.0",
+          "3982.0",
+          "618.0",
+          "5531.0",
+          "4133.0",
+          "4544.0",
+          "3872.0",
+          "680.0",
+          "5645.0",
+          "6314.0",
+          "1179.0",
+          "1671.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier code representing a specific general ledger (GL) account related to the unsafe event, stored as a string with numeric values. Used to link the event to financial or accounting records within the organization."
+      },
+      "gl_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Abhishek Chakraborty",
+          "Bidit Kumar Mondal",
+          "JASWANT C",
+          "SANDEEP KAUSHIK",
+          "Sudarshan Ambadipudi",
+          "Stephen Jesudoss",
+          "Sharmishta Chakravorty",
+          "Baskar Munusamy",
+          "Govind Saiwal",
+          "PANKAJ KUMAR",
+          "Pravindra Tiwari",
+          "Trisha Nandi",
+          "Balasingh Balakrishnan",
+          "manjunatha  annajigowda",
+          "Sathis D",
+          "Dinagaran Joseph",
+          "Vijayan R",
+          "Sudheer Pattiri",
+          "Shaival Gajjar",
+          "ANSHUL KUMAR"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifier for the group leader associated with the unsafe event, represented by their full name. This column helps link the event to the responsible or reporting individual within the organization."
+      },
+      "pe_id_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "6250",
+          "4098",
+          "17433",
+          "8839",
+          "2770",
+          "Kamlesh Kumar",
+          "3417",
+          "17904",
+          "5438",
+          "5475",
+          "4233",
+          "5554",
+          "17331",
+          "2552",
+          "3751",
+          "3220",
+          "5481",
+          "2628",
+          "3217",
+          "17865"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Identifier linking the person involved in the unsafe event, capturing either a numeric ID or a name, used to associate event records with specific personnel within the safety incident tracking system."
+      },
+      "pe_id": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Nagaraja Kulala",
+          "Chandrashekar Ganesan",
+          "Md Arafat",
+          "Krishna Pandey",
+          "Davidson Navroj",
+          "Manoj Kumar",
+          "Anil Kumar",
+          "Merlin Jose T.",
+          "Mahesh Buddhala",
+          "IYYAPPAN E",
+          "Dinesh Bavaskar",
+          "Yogesh Kumar",
+          "Manulal Mohanan",
+          "Maruti Gopale",
+          "Ravi Chauhan",
+          "lipun sahu",
+          "Karadi Sankar Patra",
+          "Md. Anbar Hossain",
+          "Biswajit Khanra",
+          "Nandakumar M"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifier storing the name of the person involved in the unsafe event, capturing individuals such as employees or witnesses associated with the incident."
+      },
+      "created_on": {
+        "data_type": "timestamp without time zone",
+        "unique_values": [
+          "min: 2025-01-24 17:19:45.733000",
+          "max: 2025-06-17 16:41:13.826000"
+        ],
+        "is_nullable": true,
+        "description": "Timestamp indicating when the unsafe event record was initially created in the system, capturing the exact date and time of entry between January and June 2025. This helps track the timeline of reporting and data entry for safety incidents."
+      },
+      "date_and_time_of_unsafe_event": {
+        "data_type": "timestamp without time zone",
+        "unique_values": [
+          "min: 2024-11-08 15:58:00",
+          "max: 2025-12-12 09:00:00"
+        ],
+        "is_nullable": true,
+        "description": "Timestamp recording when the unsafe event occurred, capturing the exact date and time of the incident within the Northern Ireland TCT safety reporting system. This allows tracking and analysis of event timing relative to reporting and response activities."
+      },
+      "type_of_unsafe_event_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "ET03",
+          "ET01",
+          "ET02"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Identifier code representing the specific category of the unsafe event recorded, used to classify and differentiate types such as 'ET01', 'ET02', and 'ET03' within the incident report."
+      },
+      "type_of_unsafe_event": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Near Miss",
+          "Unsafe Condition",
+          "Unsafe Act"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Categorizes the nature of the unsafe event reported, indicating whether it was a Near Miss, Unsafe Condition, or Unsafe Act. This helps in classifying incidents for safety analysis and preventive measures."
+      },
+      "unsafe_event_details_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "UE13",
+          "UE20",
+          "UE23",
+          "UE17",
+          "UE14",
+          "UE10",
+          "UE12",
+          "UE16",
+          "UE2",
+          "UE8",
+          "UE18",
+          "UE25",
+          "UE24",
+          "UE1",
+          "UE5",
+          "UE4",
+          "UE21",
+          "UE15",
+          "UE3",
+          "UE22"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Unique identifier code representing specific details of an unsafe event, used to categorize and reference event descriptions within the unsafe_events_ni_tct table. Values follow a pattern like 'UE13' indicating distinct unsafe event detail records."
+      },
+      "unsafe_event_details": {
+        "data_type": "text",
+        "unique_values": [
+          "Hoisting / Rigging failure (tools or method)",
+          "Other Unsafe Act",
+          "Pit Access Hazard",
+          "Lack of or improper use of PPE",
+          "Poor Lighting",
+          "Fire and Chemical Hazards",
+          "Fall Hazard exposure",
+          "Inadequate barricades (Falling Hazard)",
+          "Other Unsafe Condition",
+          "Missing Guards (CWT, Machine, Electrical etc...)",
+          "Falling Objects Hazard",
+          "Housekeeping Issues",
+          "Bypass safety rules or removal of safety devices",
+          "Tripping Hazard",
+          "Operating without following adequate procedure",
+          "Using Defective Equipment",
+          "Electrical Hazards",
+          "Lack of control of elevator",
+          "Failure to inform about unsafe situation",
+          "Above or below other employee in the hoistway"
+        ],
+        "is_nullable": true,
+        "description": "Details describing the specific nature or category of the unsafe event reported, such as equipment failures, hazards, or unsafe acts, providing context for incident analysis within the safety reporting system."
+      },
+      "action_related_to_high_risk_situation_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "YES",
+          "NO"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the action taken during the unsafe event was related to a high-risk situation, with possible values 'YES' or 'NO'. This helps identify if the response addressed critical safety concerns."
+      },
+      "action_related_to_high_risk_situation": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether the action taken during the unsafe event was related to managing a high-risk situation. Stores a 'Yes' or 'No' value to reflect the presence or absence of such an action."
+      },
+      "business_details_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "MOD",
+          "NI"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Identifies the business segment associated with the unsafe event, represented by codes such as 'MOD' or 'NI'. This key links the event to specific business details for reporting and analysis purposes."
+      },
+      "business_details": {
+        "data_type": "character varying",
+        "unique_values": [
+          "New Installation",
+          "Modernisation"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Specifies the nature of the business activity related to the unsafe event, such as 'New Installation' or 'Modernisation'. This helps categorize the event based on the type of operational work being performed."
+      },
+      "site_name": {
+        "data_type": "text",
+        "unique_values": [
+          "Hamsaveni residence",
+          "C-23 Ashok vihar ph-1",
+          "Hm anitha bose",
+          "9Rajgir",
+          "Sunil",
+          "Govardhan Reddy site",
+          "Maha palika",
+          "Virendra Singh Ranawat",
+          "C-97 naraina vihar",
+          "The 4th axis",
+          "1994 sec-45",
+          "KSR Signature",
+          "C-49Ashok vihar ph-1",
+          "Goyal green 81",
+          "Sankla house",
+          "Lagan saree",
+          "Kailash Cristal site",
+          "D. Senthil",
+          "4 axis",
+          "Avadh miliyan."
+        ],
+        "is_nullable": true,
+        "description": "Name of the location or site where the unsafe event occurred, capturing specific addresses or site identifiers to contextualize the incident within the unsafe_events_ni_tct table."
+      },
+      "site_reference_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "LC07",
+          "LC08",
+          "LC04",
+          "LC06",
+          "LC03",
+          "LC01",
+          "LC09",
+          "LC02",
+          "LC10",
+          "LC11",
+          "LC05"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Identifier code representing the specific site where the unsafe event occurred, using a standardized alphanumeric format (e.g., LC01, LC02). This key links the event to its corresponding location within the organization's site network."
+      },
+      "site_reference": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Landing",
+          "Office Area",
+          "Inside Car",
+          "Other",
+          "Production Plant",
+          "Pit",
+          "Car Top",
+          "Escalator",
+          "Hoistway",
+          "Machine Room",
+          "Warehouse / Logistic Area"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Indicates the specific location within a site where the unsafe event occurred, such as 'Landing', 'Office Area', or 'Production Plant'. This helps categorize and analyze incidents based on their physical context within the facility."
+      },
+      "product_type_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "5300",
+          "ES5",
+          "5500AP",
+          "ES2",
+          "3300",
+          "5500",
+          "ES1",
+          "ESCALATOR",
+          "ES3"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Identifier representing the category or model of the product involved in the unsafe event, using codes or names such as equipment types or series. This helps classify the product for analysis and reporting within the safety incident records."
+      },
+      "product_type": {
+        "data_type": "character varying",
+        "unique_values": [
+          "5300",
+          "Escalator",
+          "5500AP",
+          "ES2",
+          "3300",
+          "5500",
+          "ES 5.0",
+          "ES1",
+          "ES3"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Identifies the specific product or equipment type involved in the unsafe event, represented by codes or descriptive names such as '5300', 'Escalator', or 'ES 5.0'. This helps categorize incidents by the product for analysis and reporting purposes."
+      },
+      "persons_involved": {
+        "data_type": "text",
+        "unique_values": [
+          "Stor room Not cleaning",
+          "customer welding work on 3rd floor  Welding drops caused a fire The paper in front of the lip.",
+          "Sunil",
+          "Low loose cables at shaft outside",
+          "Water leakage inside shaft ground floor",
+          "Kiran IPS",
+          "FT Samadhan mali",
+          "Electrical light hazard water hazard and other",
+          "Ramesh katkar,",
+          "M.Sidhi raju / B. Srinivas",
+          "Electrical Hajard",
+          "FT - sandeep mourya",
+          "Pradeep Yadav",
+          "1. Sunil Kumar Prajapat. F. T.                                                                  2. Puspendra saini.         F. T. C.",
+          "Castmr ko inform Kiya sidi me polis ka kam chal Raha he",
+          "UMAPATI kumar , nikhil rane",
+          "Karan pandey",
+          "Suresh chauhan & amar sing Chauhan",
+          "No hand rails in stair case",
+          "Customer water filters in material"
+        ],
+        "is_nullable": true,
+        "description": "Details of individuals or entities involved or referenced in the unsafe event, including names, roles, or descriptions, recorded as free text for context and follow-up."
+      },
+      "work_was_stopped_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "YES",
+          "NO"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether work was halted during the unsafe event, with possible values 'YES' or 'NO'. This flag helps track if immediate action was taken to stop work for safety reasons."
+      },
+      "work_was_stopped": {
+        "data_type": "character varying",
+        "unique_values": [
+          "No",
+          "Yes"
+        ],
+        "max_length": 10,
+        "is_nullable": true,
+        "description": "Indicates whether work was halted due to the reported unsafe event, with possible values 'Yes' or 'No'. This helps track if safety concerns led to stopping operations during the incident."
+      },
+      "work_stopped_hours": {
+        "data_type": "character varying",
+        "unique_values": [
+          "11.0",
+          "1000.0",
+          "15.0",
+          "8.0",
+          "3.0",
+          "8004.0",
+          "72.0",
+          "16.0",
+          "8001.0",
+          "24.0",
+          "4000.0",
+          "48.0",
+          "4.0",
+          "1.0",
+          "2.0",
+          "7.0",
+          "9.0",
+          "10.0",
+          "30.0",
+          "20.0"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Duration, in hours, for which work was halted due to an unsafe event, recorded as a text value. This captures the length of stoppage impacting operations following the incident."
+      },
+      "no_go_violation_key": {
+        "data_type": "character varying",
+        "unique_values": [
+          "NG3",
+          "NG1",
+          "NG2",
+          "NG4",
+          "NG6",
+          "NG5"
+        ],
+        "max_length": 50,
+        "is_nullable": true,
+        "description": "Code identifying specific types of no-go violations related to unsafe events, used to categorize and track safety breaches within the reported incidents. Sample values like 'NG1' to 'NG6' represent distinct violation categories."
+      },
+      "no_go_violation": {
+        "data_type": "character varying",
+        "unique_values": [
+          "Jumper",
+          "Hoisting / Rigging",
+          "Fall Protection",
+          "Safe Hoistway Access",
+          "Log Out / Tag Out",
+          "Subcon’s Certification"
+        ],
+        "max_length": 255,
+        "is_nullable": true,
+        "description": "Indicates the specific type of safety rule or protocol violated during the unsafe event, such as 'Jumper' or 'Fall Protection'. This categorical field helps classify the nature of the no-go violation for incident analysis and reporting."
+      },
+      "job_no": {
+        "data_type": "character varying",
+        "unique_values": [
+          "11740938.0",
+          "11826950.0",
+          "11813136.0",
+          "11819807.0",
+          "11821287.0",
+          "11812018.0",
+          "11823246.0",
+          "11853349.0",
+          "11820349.0",
+          "11767767.0",
+          "20102091.0",
+          "20119827.0",
+          "11826949.0",
+          "11807933.0",
+          "11061237.0",
+          "11827323.0",
+          "11791777.0",
+          "11753993.0",
+          "20122217.0",
+          "11850269.0"
+        ],
+        "max_length": 100,
+        "is_nullable": true,
+        "description": "Unique identifier for the job associated with each unsafe event, stored as a string to accommodate numeric values with decimal formatting. This value links the event to specific work orders or tasks within the reporting system."
+      },
+      "additional_comments": {
+        "data_type": "text",
+        "unique_values": [
+          "inform the customer and stop work",
+          "Debris on pit because of chipping work",
+          "10 floor",
+          "Frogs on omega bracket in pit reported to customer and removed.",
+          "Group floor open pockets in frand off galery inform to customer and supervisor to cover Open pockets then after start work",
+          "Unsafe kaam kar raha tha yaha PR khada Hoke ushko bolo Aisha kaam Mat Karo or kaam band karva diya",
+          "The temporary railing on the stairs was removed. So, without stopping the work, we used the stairs with a second railing on the side.",
+          "Clear area",
+          "Close this gap",
+          "Safety barricades lock not proper locking",
+          "Clear the cartop immediately",
+          "Infront of Ground floor landing door,there is a customer chipping work going on.",
+          "Due to rain, water entered the store room and the materials got wet.",
+          "No protection provided in top floor risk of falling",
+          "Electric wire open conditions of stracase",
+          "Ground floor open Dak aear falling hazard",
+          "Inform customer and put upon a strong materials",
+          "In the first photo, the hexa frame is not protected. In the second photo, the exa frame is protected.",
+          "Landing area one rad projection",
+          "Shaft ke bahar naked wire thi jis se hame bhi khatra ho skta hai ."
+        ],
+        "is_nullable": true,
+        "description": "Detailed textual notes providing additional context or observations related to the reported unsafe event, including specific hazards, actions taken, or instructions communicated."
+      },
+      "has_attachment": {
+        "data_type": "boolean",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Indicates whether the unsafe event report includes any supporting files or documents. A true value means at least one attachment is associated with the record, aiding in detailed incident documentation."
+      },
+      "attachment": {
+        "data_type": "character varying",
+        "unique_values": [],
+        "max_length": 500,
+        "is_nullable": true,
+        "description": "Stores the filename or identifier of any file attached to the unsafe event report, providing supplementary evidence or documentation related to the incident. This field links to additional materials supporting the event details."
+      },
+      "db_uploaded_date": {
+        "data_type": "timestamp without time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:12:21.145771",
+          "max: 2025-08-03 14:19:16.464072"
+        ],
+        "is_nullable": false,
+        "description": "Timestamp indicating when the unsafe event record was uploaded to the database. Reflects the exact date and time the data entry was made, separate from the event occurrence or creation timestamps."
+      },
+      "id": {
+        "data_type": "integer",
+        "unique_values": [
+          "min: 1",
+          "max: 9608"
+        ],
+        "is_nullable": false,
+        "description": "Unique identifier for each unsafe event record, assigned sequentially from 1 to 9608, ensuring distinct tracking within the unsafe_events_ni_tct table."
+      },
+      "created_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [
+          "min: 2025-07-31 04:12:21.145771+00:00",
+          "max: 2025-08-03 14:19:16.464072+00:00"
+        ],
+        "is_nullable": true,
+        "description": "Timestamp with time zone indicating when the unsafe event record was initially created in the system. Reflects the exact date and time the entry was logged, supporting accurate tracking and auditing of event submissions."
+      },
+      "updated_at": {
+        "data_type": "timestamp with time zone",
+        "unique_values": [],
+        "is_nullable": true,
+        "description": "Timestamp indicating the most recent update made to the unsafe event record, including timezone information to ensure accurate tracking across regions."
+      }
+    }
+
+}

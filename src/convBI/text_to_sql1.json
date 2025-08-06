@@ -1,0 +1,827 @@
+{
+  "history": [
+    {
+      "type": "human",
+      "content": "heights unsafe events in a area"
+    },
+    {
+      "type": "ai",
+      "content": "SELECT city, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_ei_tech\nWHERE unsafe_condition LIKE '%Fall Hazard%' OR unsafe_condition LIKE '%Pit access hazard%' OR unsafe_condition LIKE '%Position below suspended/moving load%'\nGROUP BY city\nORDER BY unsafe_event_count DESC;"
+    },
+    {
+      "type": "ai",
+      "content": "in the ei tech area, there are 1,326 unsafe events related to height hazards such as fall hazards, pit access hazards, or being positioned below suspended/moving loads."
+    },
+    {
+      "type": "human",
+      "content": "in the srs"
+    },
+    {
+      "type": "ai",
+      "content": "SELECT city, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_srs\nGROUP BY city\nORDER BY unsafe_event_count DESC;"
+    },
+    {
+      "type": "ai",
+      "content": "in the srs system, the total number of unsafe events is highest where city is unspecified (1464 events). among specified locations, bangalore 1 leads with 1428 events, followed closely by north delhi with 1422 events, and infra/trd with 936 events. other notable cities include bangalore 2 (810), south delhi (804), mumbai 1 (600), and mumbai 2 (552), with counts gradually decreasing across various other cities and offices."
+    },
+    {
+      "type": "human",
+      "content": "in the ni tct"
+    },
+    {
+      "type": "ai",
+      "content": "SELECT branch_name, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_ni_tct\nGROUP BY branch_name\nORDER BY unsafe_event_count DESC;"
+    },
+    {
+      "type": "ai",
+      "content": "in ni tct, the surat branch has the highest number of unsafe events with 924, followed by bangalore 2 with 756 and bangalore 1 with 750. other branches report fewer events, with counts gradually decreasing down to one branch with 14 unsafe events."
+    }
+  ],
+  "question": "in the ni tct",
+  "intent": "system_query",
+  "database_ddl": "\nunsafe_events_ei_tech (\n    event_id INTEGER,\n    reporter_name VARCHAR(255),\n    manager_name VARCHAR(255),\n    branch VARCHAR(255),\n    reported_date DATE,\n    reporter_id VARCHAR(100),\n    date_of_unsafe_event DATE,\n    time VARCHAR(50),\n    time_of_unsafe_event VARCHAR(50),\n    unsafe_event_type VARCHAR(255),\n    business_details VARCHAR(255),\n    site_reference TEXT,\n    unsafe_event_location VARCHAR(255),\n    product_type VARCHAR(255),\n    employee_id VARCHAR(100),\n    employee_name VARCHAR(255),\n    subcontractor_company_name VARCHAR(255),\n    subcontractor_id VARCHAR(100),\n    subcontractor_city VARCHAR(255),\n    subcontractor_name VARCHAR(255),\n    kg_name VARCHAR(100),\n    country_name VARCHAR(100),\n    division VARCHAR(255),\n    department VARCHAR(255),\n    city VARCHAR(255),\n    sub_area VARCHAR(100),\n    district VARCHAR(255),\n    zone VARCHAR(255),\n    serious_near_miss VARCHAR(10),\n    unsafe_act VARCHAR(255),\n    unsafe_act_other TEXT,\n    unsafe_condition TEXT,\n    unsafe_condition_other TEXT,\n    work_stopped VARCHAR(10),\n    stop_work_nogo_violation VARCHAR(255),\n    nogo_violation_detail TEXT,\n    stop_work_duration VARCHAR(255),\n    other_safety_issues TEXT,\n    comments_remarks TEXT,\n    event_requires_sanction VARCHAR(10),\n    action_description_1 TEXT,\n    action_description_2 TEXT,\n    action_description_3 TEXT,\n    action_description_4 TEXT,\n    action_description_5 TEXT,\n    image VARCHAR(500),\n    status VARCHAR(50),\n    region VARCHAR(100),\n    db_uploaded_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nunsafe_events_srs (\n    event_id VARCHAR(100),\n    reporter_name VARCHAR(255),\n    reported_date DATE,\n    reporter_id VARCHAR(100),\n    date_of_unsafe_event DATE,\n    time_of_unsafe_event VARCHAR(50),\n    unsafe_event_type VARCHAR(255),\n    business_details VARCHAR(255),\n    site_reference TEXT,\n    unsafe_event_location VARCHAR(255),\n    product_type VARCHAR(255),\n    employee_id VARCHAR(100),\n    employee_name VARCHAR(255),\n    subcontractor_company_name VARCHAR(255),\n    subcontractor_id VARCHAR(100),\n    subcontractor_city VARCHAR(255),\n    subcontractor_name VARCHAR(255),\n    kg_name VARCHAR(100),\n    country_name VARCHAR(100),\n    division VARCHAR(255),\n    department VARCHAR(255),\n    city VARCHAR(255),\n    sub_area VARCHAR(100),\n    district VARCHAR(255),\n    zone VARCHAR(255),\n    serious_near_miss VARCHAR(10),\n    unsafe_act TEXT,\n    unsafe_act_other TEXT,\n    unsafe_condition TEXT,\n    unsafe_condition_other TEXT,\n    work_stopped VARCHAR(10),\n    stop_work_nogo_violation VARCHAR(10),\n    nogo_violation_detail TEXT,\n    stop_work_duration VARCHAR(255),\n    other_safety_issues TEXT,\n    comments_remarks TEXT,\n    event_requires_sanction VARCHAR(10),\n    action_description_1 TEXT,\n    action_description_2 TEXT,\n    action_description_3 TEXT,\n    action_description_4 TEXT,\n    action_description_5 TEXT,\n    branch VARCHAR(255),\n    region VARCHAR(100),\n    db_uploaded_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nunsafe_events_ni_tct (\n    reporting_id INTEGER,\n    status_key VARCHAR(50),\n    status VARCHAR(50),\n    location_key INTEGER,\n    location VARCHAR(255),\n    branch_key INTEGER,\n    no INTEGER,\n    branch_name VARCHAR(255),\n    region_key VARCHAR(100),\n    region VARCHAR(100),\n    reporter_sap_id VARCHAR(100),\n    reporter_name VARCHAR(255),\n    designation_key VARCHAR(50),\n    designation VARCHAR(255),\n    gl_id_key VARCHAR(100),\n    gl_id VARCHAR(255),\n    pe_id_key VARCHAR(100),\n    pe_id VARCHAR(255),\n    created_on TIMESTAMP,\n    date_and_time_of_unsafe_event TIMESTAMP,\n    type_of_unsafe_event_key VARCHAR(50),\n    type_of_unsafe_event VARCHAR(255),\n    unsafe_event_details_key VARCHAR(50),\n    unsafe_event_details TEXT,\n    action_related_to_high_risk_situation_key VARCHAR(10),\n    action_related_to_high_risk_situation VARCHAR(10),\n    business_details_key VARCHAR(50),\n    business_details VARCHAR(255),\n    site_name TEXT,\n    site_reference_key VARCHAR(50),\n    site_reference VARCHAR(255),\n    product_type_key VARCHAR(50),\n    product_type VARCHAR(255),\n    persons_involved TEXT,\n    work_was_stopped_key VARCHAR(10),\n    work_was_stopped VARCHAR(10),\n    work_stopped_hours VARCHAR(50),\n    no_go_violation_key VARCHAR(50),\n    no_go_violation VARCHAR(255),\n    job_no VARCHAR(100),\n    additional_comments TEXT,\n    has_attachment BOOLEAN,\n    attachment VARCHAR(500),\n    db_uploaded_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n",
+  "tablename": "unsafe_events_ni_tct",
+  "rephrased_question": "",
+  "semantic_info": {
+    "reporting_id": {
+      "data_type": "integer",
+      "unique_values": [
+        "min: 9057",
+        "max: 12402171"
+      ],
+      "is_nullable": true,
+      "description": "Unique identifier for each reported unsafe event, used to track and reference incidents within the safety monitoring system. Values range from 9057 to over 12 million, indicating a sequential or cumulative reporting sequence."
+    },
+    "status_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "SAP",
+        "Pending"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Indicates the current processing state of the unsafe event record, such as 'SAP' for events logged in the SAP system or 'Pending' for events awaiting further action. This status helps track the workflow stage within the safety reporting process."
+    },
+    "status": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Pending",
+        "Approved"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Indicates the current approval state of the unsafe event report, showing whether it is 'Pending' review or has been 'Approved' for further action or record-keeping."
+    },
+    "location_key": {
+      "data_type": "integer",
+      "unique_values": [
+        "min: 5001",
+        "max: 5065"
+      ],
+      "is_nullable": true,
+      "description": "Unique identifier for the specific location associated with each unsafe event, represented as an integer within the range 5001 to 5065. This key links the event to a defined site or facility within the reporting system."
+    },
+    "location": {
+      "data_type": "character varying",
+      "unique_values": [
+        "5050 - Hubli",
+        "5062 - JBL1",
+        "5021 - North Delhi",
+        "5024 - Rajasthan",
+        "5047 - Mangalore",
+        "5025 - RoN",
+        "5023 - Gurgaon",
+        "5008 - Chhattisgarh & Nagpur1",
+        "5030 - South Delhi",
+        "5035 - North Delhi1",
+        "5002 - Thane & KDMC",
+        "5043 - Tamil Nadu",
+        "5063 - ONE",
+        "5006 - Ahmedabad & MP1",
+        "5005 - Ahmedabad & MP",
+        "5014 - Ahmedabad & MP2",
+        "5044 - Cochin",
+        "5065 - JBL2",
+        "5001 - Mumbai 1",
+        "5041 - Bangalore 1"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Identifies the specific site or area where the unsafe event occurred, combining a numeric code with a location name such as city or region. This helps in categorizing and tracking incidents by their geographic or operational site within the organization."
+    },
+    "branch_key": {
+      "data_type": "integer",
+      "unique_values": [
+        "min: 5001",
+        "max: 5065"
+      ],
+      "is_nullable": true,
+      "description": "Identifier for the branch where the unsafe event occurred, represented as an integer key ranging from 5001 to 5065. Used to link event records to specific branch locations within the organization."
+    },
+    "no": {
+      "data_type": "integer",
+      "unique_values": [
+        "min: -5065",
+        "max: -5001"
+      ],
+      "is_nullable": true,
+      "description": "Unique identifier number for each unsafe event record, represented as a negative integer within the range -5065 to -5001, used to track and reference specific incidents in the Northern Ireland TCT dataset."
+    },
+    "branch_name": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Chhattisgarh & Nagpur",
+        "Thane & KDMC",
+        "Andhra Pradesh",
+        "Pune 2",
+        "South Delhi",
+        "Gurgaon",
+        "North Delhi",
+        "JBL",
+        "RoN",
+        "Tamil Nadu",
+        "Rajasthan",
+        "Bangalore 2",
+        "Kolkata",
+        "Noida",
+        "Cochin",
+        "ONE",
+        "Mumbai 1",
+        "Hyderabad 2",
+        "Mumbai 2",
+        "Pune 1"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Name of the branch or location associated with the unsafe event, representing regional offices or operational sites such as 'Mumbai 1', 'South Delhi', or 'Chhattisgarh & Nagpur'. This helps identify where the incident was reported or occurred within the organization's network."
+    },
+    "region_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "South 2",
+        "West 1",
+        "South 1",
+        "North 1",
+        "North 2",
+        "West 2"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Identifier for the geographic region where the unsafe event occurred, combining area name and zone number (e.g., 'South 2', 'West 1'). Used to categorize events by specific regional subdivisions within the organization."
+    },
+    "region": {
+      "data_type": "character varying",
+      "unique_values": [
+        "NR 1",
+        "WR 1",
+        "SR 1",
+        "WR 2",
+        "SR 2",
+        "NR 2"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Identifies the specific geographic area or zone within the organization where the unsafe event occurred, using coded labels such as 'NR 1' or 'WR 2'. This helps categorize incidents by region for reporting and analysis purposes."
+    },
+    "reporter_sap_id": {
+      "data_type": "character varying",
+      "unique_values": [
+        "20005210",
+        "20151499",
+        "712862",
+        "20075750",
+        "719566",
+        "20115885",
+        "715568",
+        "714501",
+        "20003067",
+        "20085431",
+        "20005711",
+        "20003078",
+        "20084093",
+        "20041497",
+        "20109495",
+        "701026",
+        "720963",
+        "20121016",
+        "20002904",
+        "717966"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Identifier representing the SAP system ID of the individual who reported the unsafe event. This alphanumeric code links the reporter to their official employee record within the organization's SAP database."
+    },
+    "reporter_name": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Seenu R",
+        "Basawraj Kodesur",
+        "Shyam Ladke",
+        "Rahul R",
+        "Pankaj Singh Almiya",
+        "Pankaj  Sharma",
+        "Jaganath Patro",
+        "Aryan Patel",
+        "Ajinky Yuvraj  Pawar",
+        "Karan Ankush Gurghate",
+        "BhagatsinH BARAD",
+        "Sangam A",
+        "Omkar Shinde",
+        "Srinivas Bandari",
+        "Ajnish Kumar",
+        "Anil Vishwakarama",
+        "Ayush Lamkhade",
+        "Layak Ram",
+        "Anil tajve",
+        "Naresh kumar Arumugam"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Name of the individual who reported the unsafe event, recorded as a text string. This identifies the person responsible for submitting the incident details in the safety tracking system."
+    },
+    "designation_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "PE",
+        "GL",
+        "SCF",
+        "FTC",
+        "IPS",
+        "FT"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Code identifying the employee's role or position involved in the unsafe event, using standardized abbreviations such as 'PE', 'GL', and 'SCF'. This key links to the designation column to categorize personnel by their job function within the incident report."
+    },
+    "designation": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Group Leader",
+        "Project Engineer",
+        "FTC",
+        "Subcontractor Fitter",
+        "IPS",
+        "Fitter"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Role or job title of the individual involved in the unsafe event, such as 'Group Leader' or 'Project Engineer'. This identifies the person's position within the organization at the time of the incident."
+    },
+    "gl_id_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "912.0",
+        "825.0",
+        "705.0",
+        "1270.0",
+        "3148.0",
+        "4081.0",
+        "4217.0",
+        "16449.0",
+        "1202.0",
+        "3982.0",
+        "618.0",
+        "5531.0",
+        "4133.0",
+        "4544.0",
+        "3872.0",
+        "680.0",
+        "5645.0",
+        "6314.0",
+        "1179.0",
+        "1671.0"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Identifier code representing a specific general ledger (GL) account related to the unsafe event, stored as a string with numeric values. Used to link the event to financial or accounting records within the organization."
+    },
+    "gl_id": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Abhishek Chakraborty",
+        "Bidit Kumar Mondal",
+        "JASWANT C",
+        "SANDEEP KAUSHIK",
+        "Sudarshan Ambadipudi",
+        "Stephen Jesudoss",
+        "Sharmishta Chakravorty",
+        "Baskar Munusamy",
+        "Govind Saiwal",
+        "PANKAJ KUMAR",
+        "Pravindra Tiwari",
+        "Trisha Nandi",
+        "Balasingh Balakrishnan",
+        "manjunatha  annajigowda",
+        "Sathis D",
+        "Dinagaran Joseph",
+        "Vijayan R",
+        "Sudheer Pattiri",
+        "Shaival Gajjar",
+        "ANSHUL KUMAR"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Identifier for the group leader associated with the unsafe event, represented by their full name. This column helps link the event to the responsible or reporting individual within the organization."
+    },
+    "pe_id_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "6250",
+        "4098",
+        "17433",
+        "8839",
+        "2770",
+        "Kamlesh Kumar",
+        "3417",
+        "17904",
+        "5438",
+        "5475",
+        "4233",
+        "5554",
+        "17331",
+        "2552",
+        "3751",
+        "3220",
+        "5481",
+        "2628",
+        "3217",
+        "17865"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Identifier linking the person involved in the unsafe event, capturing either a numeric ID or a name, used to associate event records with specific personnel within the safety incident tracking system."
+    },
+    "pe_id": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Nagaraja Kulala",
+        "Chandrashekar Ganesan",
+        "Md Arafat",
+        "Krishna Pandey",
+        "Davidson Navroj",
+        "Manoj Kumar",
+        "Anil Kumar",
+        "Merlin Jose T.",
+        "Mahesh Buddhala",
+        "IYYAPPAN E",
+        "Dinesh Bavaskar",
+        "Yogesh Kumar",
+        "Manulal Mohanan",
+        "Maruti Gopale",
+        "Ravi Chauhan",
+        "lipun sahu",
+        "Karadi Sankar Patra",
+        "Md. Anbar Hossain",
+        "Biswajit Khanra",
+        "Nandakumar M"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Identifier storing the name of the person involved in the unsafe event, capturing individuals such as employees or witnesses associated with the incident."
+    },
+    "created_on": {
+      "data_type": "timestamp without time zone",
+      "unique_values": [
+        "min: 2025-01-24 17:19:45.733000",
+        "max: 2025-06-17 16:41:13.826000"
+      ],
+      "is_nullable": true,
+      "description": "Timestamp indicating when the unsafe event record was initially created in the system, capturing the exact date and time of entry between January and June 2025. This helps track the timeline of reporting and data entry for safety incidents."
+    },
+    "date_and_time_of_unsafe_event": {
+      "data_type": "timestamp without time zone",
+      "unique_values": [
+        "min: 2024-11-08 15:58:00",
+        "max: 2025-12-12 09:00:00"
+      ],
+      "is_nullable": true,
+      "description": "Timestamp recording when the unsafe event occurred, capturing the exact date and time of the incident within the Northern Ireland TCT safety reporting system. This allows tracking and analysis of event timing relative to reporting and response activities."
+    },
+    "type_of_unsafe_event_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "ET03",
+        "ET01",
+        "ET02"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Identifier code representing the specific category of the unsafe event recorded, used to classify and differentiate types such as 'ET01', 'ET02', and 'ET03' within the incident report."
+    },
+    "type_of_unsafe_event": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Near Miss",
+        "Unsafe Condition",
+        "Unsafe Act"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Categorizes the nature of the unsafe event reported, indicating whether it was a Near Miss, Unsafe Condition, or Unsafe Act. This helps in classifying incidents for safety analysis and preventive measures."
+    },
+    "unsafe_event_details_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "UE13",
+        "UE20",
+        "UE23",
+        "UE17",
+        "UE14",
+        "UE10",
+        "UE12",
+        "UE16",
+        "UE2",
+        "UE8",
+        "UE18",
+        "UE25",
+        "UE24",
+        "UE1",
+        "UE5",
+        "UE4",
+        "UE21",
+        "UE15",
+        "UE3",
+        "UE22"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Unique identifier code representing specific details of an unsafe event, used to categorize and reference event descriptions within the unsafe_events_ni_tct table. Values follow a pattern like 'UE13' indicating distinct unsafe event detail records."
+    },
+    "unsafe_event_details": {
+      "data_type": "text",
+      "unique_values": [
+        "Hoisting / Rigging failure (tools or method)",
+        "Other Unsafe Act",
+        "Pit Access Hazard",
+        "Lack of or improper use of PPE",
+        "Poor Lighting",
+        "Fire and Chemical Hazards",
+        "Fall Hazard exposure",
+        "Inadequate barricades (Falling Hazard)",
+        "Other Unsafe Condition",
+        "Missing Guards (CWT, Machine, Electrical etc...)",
+        "Falling Objects Hazard",
+        "Housekeeping Issues",
+        "Bypass safety rules or removal of safety devices",
+        "Tripping Hazard",
+        "Operating without following adequate procedure",
+        "Using Defective Equipment",
+        "Electrical Hazards",
+        "Lack of control of elevator",
+        "Failure to inform about unsafe situation",
+        "Above or below other employee in the hoistway"
+      ],
+      "is_nullable": true,
+      "description": "Details describing the specific nature or category of the unsafe event reported, such as equipment failures, hazards, or unsafe acts, providing context for incident analysis within the safety reporting system."
+    },
+    "action_related_to_high_risk_situation_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "YES",
+        "NO"
+      ],
+      "max_length": 10,
+      "is_nullable": true,
+      "description": "Indicates whether the action taken during the unsafe event was related to a high-risk situation, with possible values 'YES' or 'NO'. This helps identify if the response addressed critical safety concerns."
+    },
+    "action_related_to_high_risk_situation": {
+      "data_type": "character varying",
+      "unique_values": [
+        "No",
+        "Yes"
+      ],
+      "max_length": 10,
+      "is_nullable": true,
+      "description": "Indicates whether the action taken during the unsafe event was related to managing a high-risk situation. Stores a 'Yes' or 'No' value to reflect the presence or absence of such an action."
+    },
+    "business_details_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "MOD",
+        "NI"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Identifies the business segment associated with the unsafe event, represented by codes such as 'MOD' or 'NI'. This key links the event to specific business details for reporting and analysis purposes."
+    },
+    "business_details": {
+      "data_type": "character varying",
+      "unique_values": [
+        "New Installation",
+        "Modernisation"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Specifies the nature of the business activity related to the unsafe event, such as 'New Installation' or 'Modernisation'. This helps categorize the event based on the type of operational work being performed."
+    },
+    "site_name": {
+      "data_type": "text",
+      "unique_values": [
+        "Hamsaveni residence",
+        "C-23 Ashok vihar ph-1",
+        "Hm anitha bose",
+        "9Rajgir",
+        "Sunil",
+        "Govardhan Reddy site",
+        "Maha palika",
+        "Virendra Singh Ranawat",
+        "C-97 naraina vihar",
+        "The 4th axis",
+        "1994 sec-45",
+        "KSR Signature",
+        "C-49Ashok vihar ph-1",
+        "Goyal green 81",
+        "Sankla house",
+        "Lagan saree",
+        "Kailash Cristal site",
+        "D. Senthil",
+        "4 axis",
+        "Avadh miliyan."
+      ],
+      "is_nullable": true,
+      "description": "Name of the location or site where the unsafe event occurred, capturing specific addresses or site identifiers to contextualize the incident within the unsafe_events_ni_tct table."
+    },
+    "site_reference_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "LC07",
+        "LC08",
+        "LC04",
+        "LC06",
+        "LC03",
+        "LC01",
+        "LC09",
+        "LC02",
+        "LC10",
+        "LC11",
+        "LC05"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Identifier code representing the specific site where the unsafe event occurred, using a standardized alphanumeric format (e.g., LC01, LC02). This key links the event to its corresponding location within the organization's site network."
+    },
+    "site_reference": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Landing",
+        "Office Area",
+        "Inside Car",
+        "Other",
+        "Production Plant",
+        "Pit",
+        "Car Top",
+        "Escalator",
+        "Hoistway",
+        "Machine Room",
+        "Warehouse / Logistic Area"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Indicates the specific location within a site where the unsafe event occurred, such as 'Landing', 'Office Area', or 'Production Plant'. This helps categorize and analyze incidents based on their physical context within the facility."
+    },
+    "product_type_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "5300",
+        "ES5",
+        "5500AP",
+        "ES2",
+        "3300",
+        "5500",
+        "ES1",
+        "ESCALATOR",
+        "ES3"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Identifier representing the category or model of the product involved in the unsafe event, using codes or names such as equipment types or series. This helps classify the product for analysis and reporting within the safety incident records."
+    },
+    "product_type": {
+      "data_type": "character varying",
+      "unique_values": [
+        "5300",
+        "Escalator",
+        "5500AP",
+        "ES2",
+        "3300",
+        "5500",
+        "ES 5.0",
+        "ES1",
+        "ES3"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Identifies the specific product or equipment type involved in the unsafe event, represented by codes or descriptive names such as '5300', 'Escalator', or 'ES 5.0'. This helps categorize incidents by the product for analysis and reporting purposes."
+    },
+    "persons_involved": {
+      "data_type": "text",
+      "unique_values": [
+        "Stor room Not cleaning",
+        "customer welding work on 3rd floor  Welding drops caused a fire The paper in front of the lip.",
+        "Sunil",
+        "Low loose cables at shaft outside",
+        "Water leakage inside shaft ground floor",
+        "Kiran IPS",
+        "FT Samadhan mali",
+        "Electrical light hazard water hazard and other",
+        "Ramesh katkar,",
+        "M.Sidhi raju / B. Srinivas",
+        "Electrical Hajard",
+        "FT - sandeep mourya",
+        "Pradeep Yadav",
+        "1. Sunil Kumar Prajapat. F. T.                                                                  2. Puspendra saini.         F. T. C.",
+        "Castmr ko inform Kiya sidi me polis ka kam chal Raha he",
+        "UMAPATI kumar , nikhil rane",
+        "Karan pandey",
+        "Suresh chauhan & amar sing Chauhan",
+        "No hand rails in stair case",
+        "Customer water filters in material"
+      ],
+      "is_nullable": true,
+      "description": "Details of individuals or entities involved or referenced in the unsafe event, including names, roles, or descriptions, recorded as free text for context and follow-up."
+    },
+    "work_was_stopped_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "YES",
+        "NO"
+      ],
+      "max_length": 10,
+      "is_nullable": true,
+      "description": "Indicates whether work was halted during the unsafe event, with possible values 'YES' or 'NO'. This flag helps track if immediate action was taken to stop work for safety reasons."
+    },
+    "work_was_stopped": {
+      "data_type": "character varying",
+      "unique_values": [
+        "No",
+        "Yes"
+      ],
+      "max_length": 10,
+      "is_nullable": true,
+      "description": "Indicates whether work was halted due to the reported unsafe event, with possible values 'Yes' or 'No'. This helps track if safety concerns led to stopping operations during the incident."
+    },
+    "work_stopped_hours": {
+      "data_type": "character varying",
+      "unique_values": [
+        "11.0",
+        "1000.0",
+        "15.0",
+        "8.0",
+        "3.0",
+        "8004.0",
+        "72.0",
+        "16.0",
+        "8001.0",
+        "24.0",
+        "4000.0",
+        "48.0",
+        "4.0",
+        "1.0",
+        "2.0",
+        "7.0",
+        "9.0",
+        "10.0",
+        "30.0",
+        "20.0"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Duration, in hours, for which work was halted due to an unsafe event, recorded as a text value. This captures the length of stoppage impacting operations following the incident."
+    },
+    "no_go_violation_key": {
+      "data_type": "character varying",
+      "unique_values": [
+        "NG3",
+        "NG1",
+        "NG2",
+        "NG4",
+        "NG6",
+        "NG5"
+      ],
+      "max_length": 50,
+      "is_nullable": true,
+      "description": "Code identifying specific types of no-go violations related to unsafe events, used to categorize and track safety breaches within the reported incidents. Sample values like 'NG1' to 'NG6' represent distinct violation categories."
+    },
+    "no_go_violation": {
+      "data_type": "character varying",
+      "unique_values": [
+        "Jumper",
+        "Hoisting / Rigging",
+        "Fall Protection",
+        "Safe Hoistway Access",
+        "Log Out / Tag Out",
+        "Subcon\u00e2\u20ac\u2122s Certification"
+      ],
+      "max_length": 255,
+      "is_nullable": true,
+      "description": "Indicates the specific type of safety rule or protocol violated during the unsafe event, such as 'Jumper' or 'Fall Protection'. This categorical field helps classify the nature of the no-go violation for incident analysis and reporting."
+    },
+    "job_no": {
+      "data_type": "character varying",
+      "unique_values": [
+        "11740938.0",
+        "11826950.0",
+        "11813136.0",
+        "11819807.0",
+        "11821287.0",
+        "11812018.0",
+        "11823246.0",
+        "11853349.0",
+        "11820349.0",
+        "11767767.0",
+        "20102091.0",
+        "20119827.0",
+        "11826949.0",
+        "11807933.0",
+        "11061237.0",
+        "11827323.0",
+        "11791777.0",
+        "11753993.0",
+        "20122217.0",
+        "11850269.0"
+      ],
+      "max_length": 100,
+      "is_nullable": true,
+      "description": "Unique identifier for the job associated with each unsafe event, stored as a string to accommodate numeric values with decimal formatting. This value links the event to specific work orders or tasks within the reporting system."
+    },
+    "additional_comments": {
+      "data_type": "text",
+      "unique_values": [
+        "inform the customer and stop work",
+        "Debris on pit because of chipping work",
+        "10 floor",
+        "Frogs on omega bracket in pit reported to customer and removed.",
+        "Group floor open pockets in frand off galery inform to customer and supervisor to cover Open pockets then after start work",
+        "Unsafe kaam kar raha tha yaha PR khada Hoke ushko bolo Aisha kaam Mat Karo or kaam band karva diya",
+        "The temporary railing on the stairs was removed. So, without stopping the work, we used the stairs with a second railing on the side.",
+        "Clear area",
+        "Close this gap",
+        "Safety barricades lock not proper locking",
+        "Clear the cartop immediately",
+        "Infront of Ground floor landing door,there is a customer chipping work going on.",
+        "Due to rain, water entered the store room and the materials got wet.",
+        "No protection provided in top floor risk of falling",
+        "Electric wire open conditions of stracase",
+        "Ground floor open Dak aear falling hazard",
+        "Inform customer and put upon a strong materials",
+        "In the first photo, the hexa frame is not protected. In the second photo, the exa frame is protected.",
+        "Landing area one rad projection",
+        "Shaft ke bahar naked wire thi jis se hame bhi khatra ho skta hai ."
+      ],
+      "is_nullable": true,
+      "description": "Detailed textual notes providing additional context or observations related to the reported unsafe event, including specific hazards, actions taken, or instructions communicated."
+    },
+    "has_attachment": {
+      "data_type": "boolean",
+      "unique_values": [],
+      "is_nullable": true,
+      "description": "Indicates whether the unsafe event report includes any supporting files or documents. A true value means at least one attachment is associated with the record, aiding in detailed incident documentation."
+    },
+    "attachment": {
+      "data_type": "character varying",
+      "unique_values": [],
+      "max_length": 500,
+      "is_nullable": true,
+      "description": "Stores the filename or identifier of any file attached to the unsafe event report, providing supplementary evidence or documentation related to the incident. This field links to additional materials supporting the event details."
+    },
+    "db_uploaded_date": {
+      "data_type": "timestamp without time zone",
+      "unique_values": [
+        "min: 2025-07-31 04:12:21.145771",
+        "max: 2025-08-03 14:19:16.464072"
+      ],
+      "is_nullable": false,
+      "description": "Timestamp indicating when the unsafe event record was uploaded to the database. Reflects the exact date and time the data entry was made, separate from the event occurrence or creation timestamps."
+    },
+    "id": {
+      "data_type": "integer",
+      "unique_values": [
+        "min: 1",
+        "max: 9608"
+      ],
+      "is_nullable": false,
+      "description": "Unique identifier for each unsafe event record, assigned sequentially from 1 to 9608, ensuring distinct tracking within the unsafe_events_ni_tct table."
+    },
+    "created_at": {
+      "data_type": "timestamp with time zone",
+      "unique_values": [
+        "min: 2025-07-31 04:12:21.145771+00:00",
+        "max: 2025-08-03 14:19:16.464072+00:00"
+      ],
+      "is_nullable": true,
+      "description": "Timestamp with time zone indicating when the unsafe event record was initially created in the system. Reflects the exact date and time the entry was logged, supporting accurate tracking and auditing of event submissions."
+    },
+    "updated_at": {
+      "data_type": "timestamp with time zone",
+      "unique_values": [],
+      "is_nullable": true,
+      "description": "Timestamp indicating the most recent update made to the unsafe event record, including timezone information to ensure accurate tracking across regions."
+    }
+  },
+  "sql_query": "SELECT branch_name, COUNT(*) AS unsafe_event_count\nFROM unsafe_events_ni_tct\nGROUP BY branch_name\nORDER BY unsafe_event_count DESC;",
+  "query_result": "[{'branch_name': 'Surat', 'unsafe_event_count': 924}, {'branch_name': 'Bangalore 2', 'unsafe_event_count': 756}, {'branch_name': 'Bangalore 1', 'unsafe_event_count': 750}, {'branch_name': 'Thane & KDMC', 'unsafe_event_count': 720}, {'branch_name': 'Ahmedabad & MP', 'unsafe_event_count': 680}, {'branch_name': 'Mumbai 1', 'unsafe_event_count': 678}, {'branch_name': 'North Delhi', 'unsafe_event_count': 534}, {'branch_name': 'Mumbai 2', 'unsafe_event_count': 508}, {'branch_name': 'Pune 2', 'unsafe_event_count': 504}, {'branch_name': 'Pune 1', 'unsafe_event_count': 486}, {'branch_name': 'Hyderabad 1', 'unsafe_event_count': 480}, {'branch_name': 'Goa', 'unsafe_event_count': 410}, {'branch_name': 'Hyderabad 2', 'unsafe_event_count': 382}, {'branch_name': 'Rajasthan', 'unsafe_event_count': 360}, {'branch_name': 'Chhattisgarh & Nagpur', 'unsafe_event_count': 260}, {'branch_name': 'Andhra Pradesh', 'unsafe_event_count': 200}, {'branch_name': 'South Delhi', 'unsafe_event_count': 188}, {'branch_name': 'Cochin', 'unsafe_event_count': 176}, {'branch_name': 'Tamil Nadu', 'unsafe_event_count': 176}, {'branch_name': 'Mangalore', 'unsafe_event_count': 84}, {'branch_name': 'Noida', 'unsafe_event_count': 76}, {'branch_name': 'JBL', 'unsafe_event_count': 70}, {'branch_name': 'RoN', 'unsafe_event_count': 68}, {'branch_name': 'Gurgaon', 'unsafe_event_count': 46}, {'branch_name': 'Warangal', 'unsafe_event_count': 40}, {'branch_name': 'Kolkata', 'unsafe_event_count': 38}, {'branch_name': 'ONE', 'unsafe_event_count': 14}]",
+  "query_error_message": "",
+  "needs_clarification": true,
+  "visualization_data": "",
+  "final_answer": "in ni tct, the surat branch has the highest number of unsafe events with 924, followed by bangalore 2 with 756 and bangalore 1 with 750. other branches report fewer events, with counts gradually decreasing down to one branch with 14 unsafe events."
+}
